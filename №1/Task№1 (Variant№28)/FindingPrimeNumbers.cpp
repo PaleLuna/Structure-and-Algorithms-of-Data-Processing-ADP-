@@ -1,56 +1,18 @@
 #include "FindingPrimeNumbers.h"
 
-void SieveOfEratosthenes(unsigned short* fillable, unsigned short& amountPrimes)
+void SieveOfEratosthenes(unsigned short* fillable, unsigned short& amountPrimes);
+
+void FindingPrimeNumbers(int* source, int* fillable, int &amountPrimes)
 {
-	unsigned short tempArr[MAX_NUM + 1];
-	unsigned short count = 0;
+	unsigned short arrayOfPrimes[MAX_NUM];//Массив, хранящий последовательность простых чисел
+	unsigned short actualLengthPrime; //Действительная длина последовательности простых чисел
+	unsigned short indOfLastElInFillable = 0; //Индекс последнего элемента в заполняемом массиве
 
-	for (int i = 0; i <= MAX_NUM; i++)
-	{
-		tempArr[i] = i;
-	}
-
-	tempArr[1] = 0;
-	count++;
-
-	for (int i = 2; i < pow(MAX_NUM, 0.5F); i++)
-	{
-		if (tempArr[i] != 0)
-		{
-			for (int j = 2 * i; j <= MAX_NUM; j += i)
-			{
-				if (tempArr[j] != 0)
-				{
-					tempArr[j] = 0;
-					count++;
-				}
-			}
-		}
-	}
-
-	amountPrimes = MAX_NUM - count;
-
-	int j = 0;
-	for (int i = 0; i <= MAX_NUM; i++)
-	{
-		if (tempArr[i] != 0)
-		{
-			fillable[j] = tempArr[i];
-			j++;
-		}
-	}
-}
-
-void FindingPrimeNumbers(int* source, int* primesInSource, int len)
-{
-	unsigned short actualLengthPrime;
-	unsigned short arrayOfPrimes[MAX_NUM];
-
-	unsigned short totalAmountPrimes = 0;
-
+	//Генерация последовательности простых чисел
 	SieveOfEratosthenes(arrayOfPrimes, actualLengthPrime);
 
-	for (int i = 0; i < len; i++)
+	//Поиск совпадений с помощью бинарного поиска
+	for (int i = 0; i < MAX_LEN; i++)
 	{
 		int right = actualLengthPrime - 1;
 		int left = 0;
@@ -63,22 +25,63 @@ void FindingPrimeNumbers(int* source, int* primesInSource, int len)
 			else if (source[i] < arrayOfPrimes[mid]) { right = mid - 1; }
 			else
 			{
-				primesInSource[totalAmountPrimes] = source[i];
-				if (totalAmountPrimes > 0)
+				//Вставка простого числа, не нарушая возрастающую последовательность
+				fillable[indOfLastElInFillable] = source[i];
+				if (indOfLastElInFillable > 0)
 				{
-					for (int j = 1; j <= totalAmountPrimes; j++)
+					for (int j = 1; j <= indOfLastElInFillable; j++)
 					{
-						for (int k = 0; k < totalAmountPrimes; k++)
+						for (int k = 0; k < indOfLastElInFillable; k++)
 						{
-							if (primesInSource[k] > primesInSource[j]) { std::swap(primesInSource[j], primesInSource[k]); }
+							if (fillable[k] > fillable[j]) { std::swap(fillable[j], fillable[k]); }
 						}
 					}
 				}
-				totalAmountPrimes++;
+
+				indOfLastElInFillable++;
 				break;
 			}
 
 			if (left > right) { break; }
 		}
 	}
+
+	amountPrimes = indOfLastElInFillable;
+}
+
+//Алгоритм "Решето Эратосфена"
+void SieveOfEratosthenes(unsigned short* fillable, unsigned short& realLen)
+{
+	unsigned short tempArr[MAX_NUM + 1]; //Временный массив последовательности чисел от 0 до MAX_NUM включительно
+	unsigned short counterOfPrimes = 0;
+
+	//Заполнение массива
+	for (int i = 0; i <= MAX_NUM; i++)
+	{
+		tempArr[i] = i;
+	}
+
+	//Единица не является простым числом, сразу вычеркиваем
+	tempArr[1] = 0;
+	counterOfPrimes++;
+
+	//Фильтрация массива, путем замены всех непростых чисел нулями
+	for (int i = 2; i < pow(MAX_NUM, 0.5F); i++)
+	{
+		if (tempArr[i] != 0)
+		{
+			for (int j = 2 * i; j <= MAX_NUM; j += i)
+			{
+				if (tempArr[j] != 0)
+				{
+					tempArr[j] = 0;
+					counterOfPrimes++;
+				}
+			}
+		}
+	}
+
+	realLen = MAX_NUM - counterOfPrimes;
+
+	ArrayCleaning(tempArr, fillable, 0);
 }
