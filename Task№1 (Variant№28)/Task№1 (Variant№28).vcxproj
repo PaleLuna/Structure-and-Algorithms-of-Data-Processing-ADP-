@@ -139,7 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FindingPrimeNumbers.cpp" />
     <ClCompile Include="Task№1 (Variant№28).cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FindingPrimeNumbers.h" />
+    <ClInclude Include="Constants.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
