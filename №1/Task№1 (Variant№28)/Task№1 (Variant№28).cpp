@@ -1,5 +1,4 @@
-﻿#include <iostream>
-#include <ctime>
+﻿#include <ctime>
 #include "FindingPrimeNumbers.h"
 #include "Constants.h"
 
