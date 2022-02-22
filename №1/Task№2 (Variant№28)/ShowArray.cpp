@@ -2,19 +2,27 @@
 
 void ShowArray(unsigned short* array, unsigned short len)
 {
-	printf("[\n");
-	len--;
 
-	//¬ывод массива в консоль с некоторым форматированием
-	for (unsigned short i = 0; i < len; i++)
+	if (len > 0)
 	{
-		printf("%5i,", array[i]);
-		if ((i + 1) % 10 == 0)
+		printf("[\n");
+		len--;
+		//¬ывод массива в консоль с некоторым форматированием
+		for (unsigned short i = 0; i < len; i++)
 		{
-			printf("\n");
+			printf("%5i,", array[i]);
+			if ((i + 1) % 10 == 0)
+			{
+				printf("\n");
+			}
 		}
-	}
 
-	printf("%5i\n]\n\n", array[len]);
+		printf("%5i\n]\n\n", array[len]);
+	}
+	else
+	{
+		printf("ћассив пустой\n");
+	}
+	
 
 }
