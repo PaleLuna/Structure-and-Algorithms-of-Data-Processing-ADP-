@@ -4,12 +4,9 @@ unsigned short* SieveOfEratosthenes(unsigned short maxNum, int& realLen);
 
 unsigned short* FindingPrimeNumbers(unsigned short* source, unsigned short maxNum, unsigned short maxLen, int& amountPrimes)
 {
-	printf("%i, %i\n", maxLen, maxNum);
 
 	int actualLengthPrime; //ƒействительна€ длина последовательности простых чисел
 	unsigned short* arrayOfPrimes = SieveOfEratosthenes(maxNum, actualLengthPrime);//ћассив, хран€щий последовательность простых 
-
-	printf("%i\n", actualLengthPrime);
 
 	unsigned short* fillable = new unsigned short[maxLen]; //ћассив, в который будут записаны простые числа
 	unsigned short indOfLastElInFillable = 0; //»ндекс последнего элемента в заполн€емом массиве
@@ -24,7 +21,6 @@ unsigned short* FindingPrimeNumbers(unsigned short* source, unsigned short maxNu
 		while (true)
 		{
 			int mid = (right + left) / 2;
-			printf("%i ? %i\n", source[i], arrayOfPrimes[mid]);
 			if (source[i] > arrayOfPrimes[mid]) { left = mid + 1; }
 			else if (source[i] < arrayOfPrimes[mid]) { right = mid - 1; }
 			else
@@ -49,7 +45,6 @@ unsigned short* FindingPrimeNumbers(unsigned short* source, unsigned short maxNu
 			if (left > right) { break; }
 		}
 	}
-	printf("%i\n", indOfLastElInFillable);
 	amountPrimes = indOfLastElInFillable;
 	return fillable;
 }
@@ -70,10 +65,10 @@ unsigned short* SieveOfEratosthenes(unsigned short maxNum, int& realLen)
 	tempArr[1] = 0;
 	counterOfPrimes++;
 
-	int s = (int)pow(maxNum, 0.5f);
+	int sqrtMaxNum = sqrt(maxNum);
 
 	//‘ильтраци€ массива, путем замены всех непростых чисел нул€ми
-	for (int i = 2; i < maxNum; i++)
+	for (int i = 2; i < sqrtMaxNum; i++)
 	{
 		if (tempArr[i] != 0)
 		{
@@ -89,7 +84,6 @@ unsigned short* SieveOfEratosthenes(unsigned short maxNum, int& realLen)
 	}
 
 	realLen = maxNum - counterOfPrimes;
-
 	CleaningArr(tempArr, maxNum, realLen, 0);
 
 	return tempArr;
