@@ -17,6 +17,18 @@ void CleaningArr(unsigned short* &source, unsigned currentLen, unsigned short ta
 	delete[] source;
 
 	source = fillable;
+}
 
+void CleaningArr(unsigned short*& source, unsigned short targetLen)
+{
+	unsigned short* fillable = new unsigned short[targetLen];
 
+	for (unsigned short i = 0; i < targetLen; i++)
+	{
+			fillable[i] = source[i];
+	}
+
+	delete[] source;
+
+	source = fillable;
 }

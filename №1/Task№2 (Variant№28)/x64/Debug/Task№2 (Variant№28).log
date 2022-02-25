@@ -1,3 +1,7 @@
-﻿  FindingPrimeNumbers.cpp
+﻿  CleaningArr.cpp
+  FindingPrimeNumbers.cpp
 D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№2 (Variant№28)\FindingPrimeNumbers.cpp(68,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  RemovingMinimum.cpp
+  Task№2 (Variant№28).cpp
+  Создание кода...
   Task№2 (Variant№28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№2 (Variant№28).exe
