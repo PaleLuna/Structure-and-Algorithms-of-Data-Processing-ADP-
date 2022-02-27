@@ -1,6 +1,7 @@
 #include <iostream>
-#include <cmath>
-#include <ctime>
+#include "SieveOfEratosthenes.h"
+#include "ArrayCompressor.h"
+
 #pragma once
 
 class SequencePrimeNumbers
@@ -10,22 +11,23 @@ class SequencePrimeNumbers
 		~SequencePrimeNumbers();
 
 		void ShowPrimes();
-
-	private:
-		unsigned short maxLen;
-		unsigned short maxNum;
-
-		unsigned short amountPrimesInSource = 0;
-		unsigned short* source;
-		unsigned short* primesInSource;
-		
-		void SourceFilling();
-		void FindingPrimeNumbers();
 		void ShowSource();
 
-		
+		SequencePrimeNumbers& operator--();
+
 	
+
+	private:
+		SieveOfEratosthenes sieveOfEratosthenes;
+		ArrayCompressor arrayCompressor;
+
+		unsigned short sourceLen;
+		unsigned short maxNum;
+		unsigned short amountPrimesInSource = 0;
+	
+		unsigned short* source;
+		unsigned short* primesInSource;
+
+		void SourceFilling();
+		void FindingPrimeNumbers();
 };
-
-
-

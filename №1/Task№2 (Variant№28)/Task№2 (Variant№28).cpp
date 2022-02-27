@@ -1,12 +1,6 @@
 ﻿#include <iostream>
-#include "FindingPrimeNumbers.h"
-#include "RemovingMinimum.h"
+#include "SequencePrimeNumbers.h"
 #include "UserInput.h"
-#include "AutomaticFilling.h"
-#include "ShowArray.h"
-
-
-
 
 using namespace std;
 
@@ -17,42 +11,22 @@ int main()
 	unsigned short maxLen;
 	unsigned short maxNum;
 
-	int amountPrimesInSource;
-	unsigned short* source;
-	unsigned short* primesInSource;
-
 	printf("Введите длину массива: ");
 	maxLen = UserInput();
 	printf("Введите максимально допустимое число: ");
 	maxNum = UserInput();
+	printf("\n\n\n");
 
-	//Инициализация основного массива
-	source = new unsigned short[maxLen];
-	AutomaticFilling(source, maxLen, maxNum);
-	printf("Основной массив натуральных чисел:\n");
-	ShowArray(source, maxLen);
+	SequencePrimeNumbers seqPrimes(maxLen, maxNum);
 
-	primesInSource = FindingPrimeNumbers(source, maxNum, maxLen, amountPrimesInSource);
-	ShowArray(primesInSource, amountPrimesInSource);
+	printf("Основная последовательность случайных чисел:\n");
+	seqPrimes.ShowSource();
+	printf("Последовательность простых чисел из основной последовательности:\n");
+	seqPrimes.ShowPrimes();
 
-	while (true)
-	{
-		unsigned short choise;
-		choise = UserInput();
-
-		if (choise == 1)
-		{
-			RemovingMinimum(primesInSource, amountPrimesInSource);
-			ShowArray(primesInSource, amountPrimesInSource);
-		}
-		else
-		{
-			break;
-		}
-	}
+	--seqPrimes;
+	seqPrimes.ShowPrimes();
 
 
-	delete[] source;
-	delete[] primesInSource;
 	return 0;
 }

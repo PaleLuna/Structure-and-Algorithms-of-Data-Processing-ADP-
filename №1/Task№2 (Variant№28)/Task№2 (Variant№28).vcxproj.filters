@@ -19,48 +19,42 @@
     <Filter Include="Исходные файлы\Базовые модули">
       <UniqueIdentifier>{6191da54-310c-48df-811d-a03527e82e15}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Классы">
+      <UniqueIdentifier>{a5c9d41d-74f2-4fe2-8e07-82177a523b7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Классы">
+      <UniqueIdentifier>{e08f3265-a23f-4abf-b0d4-2751d817d1cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Task№2 (Variant№28).cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="AutomaticFilling.cpp">
-      <Filter>Исходные файлы\Базовые модули</Filter>
-    </ClCompile>
-    <ClCompile Include="ShowArray.cpp">
-      <Filter>Исходные файлы\Базовые модули</Filter>
-    </ClCompile>
     <ClCompile Include="UserInput.cpp">
       <Filter>Исходные файлы\Базовые модули</Filter>
     </ClCompile>
-    <ClCompile Include="FindingPrimeNumbers.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="SequencePrimeNumbers.cpp">
+      <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
-    <ClCompile Include="CleaningArr.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="SieveOfEratosthenes.cpp">
+      <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
-    <ClCompile Include="RemovingMinimum.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="ArrayCompressor.cpp">
+      <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UserInput.h">
       <Filter>Файлы заголовков\Базовые модули</Filter>
     </ClInclude>
-    <ClInclude Include="AutomaticFilling.h">
-      <Filter>Файлы заголовков\Базовые модули</Filter>
+    <ClInclude Include="SequencePrimeNumbers.h">
+      <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
-    <ClInclude Include="ShowArray.h">
-      <Filter>Файлы заголовков\Базовые модули</Filter>
+    <ClInclude Include="SieveOfEratosthenes.h">
+      <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
-    <ClInclude Include="FindingPrimeNumbers.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CleaningArr.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="RemovingMinimum.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="ArrayCompressor.h">
+      <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

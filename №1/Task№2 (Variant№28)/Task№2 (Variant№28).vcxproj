@@ -139,20 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CleaningArr.cpp" />
-    <ClCompile Include="FindingPrimeNumbers.cpp" />
-    <ClCompile Include="AutomaticFilling.cpp" />
-    <ClCompile Include="RemovingMinimum.cpp" />
-    <ClCompile Include="ShowArray.cpp" />
+    <ClCompile Include="ArrayCompressor.cpp" />
+    <ClCompile Include="SequencePrimeNumbers.cpp" />
+    <ClCompile Include="SieveOfEratosthenes.cpp" />
     <ClCompile Include="Task№2 (Variant№28).cpp" />
     <ClCompile Include="UserInput.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AutomaticFilling.h" />
-    <ClInclude Include="CleaningArr.h" />
-    <ClInclude Include="FindingPrimeNumbers.h" />
-    <ClInclude Include="RemovingMinimum.h" />
-    <ClInclude Include="ShowArray.h" />
+    <ClInclude Include="ArrayCompressor.h" />
+    <ClInclude Include="SequencePrimeNumbers.h" />
+    <ClInclude Include="SieveOfEratosthenes.h" />
     <ClInclude Include="UserInput.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
