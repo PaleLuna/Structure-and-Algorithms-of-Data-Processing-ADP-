@@ -46,3 +46,8 @@ void SieveOfEratosthenes::FillingSequence()
 	
 	primesNumber = arrayCompressor.CleaningArr(primesNumber, sequenceLimit, amountPrimes, 0);
 }
+
+SieveOfEratosthenes::~SieveOfEratosthenes()
+{
+	delete[] primesNumber;
+}

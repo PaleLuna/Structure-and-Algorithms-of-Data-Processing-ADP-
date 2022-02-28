@@ -3,4 +3,5 @@
 
 using namespace std;
 
+unsigned short UserInput(short min);
 unsigned short UserInput();
