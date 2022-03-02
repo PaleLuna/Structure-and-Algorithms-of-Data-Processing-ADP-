@@ -50,5 +50,13 @@
     <ClInclude Include="SieveOfEratosthenes.h">
       <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
+    <ClInclude Include="Task№3(Variant№28).h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="MenuText.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
   </ItemGroup>
 </Project>

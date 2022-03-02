@@ -147,7 +147,11 @@
   <ItemGroup>
     <ClInclude Include="PrimesVector.h" />
     <ClInclude Include="SieveOfEratosthenes.h" />
+    <ClInclude Include="Task№3(Variant№28).h" />
     <ClInclude Include="UserInput.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="MenuText.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,46 +1,57 @@
 #include "PrimesVector.h"
 #include "SieveOfEratosthenes.h"
 
-PrimesVector::PrimesVector(unsigned short userLen, unsigned short userMaxNum)
+void PrimesVector::SetVal(unsigned short userLen, unsigned short userMaxNum)
 {
 	maxNum = userMaxNum;
+	maxLen = userLen;
+	amountLargeCompositeNums = -1;
 
-	source.resize(userLen);
-	primesInSource.resize(userLen);
+	if (!source.empty())
+	{
+		source.clear();
+		primesInSource.clear();
+	}
+	
+
+	sieveOfEratosthenes.SetAll(maxNum);
+	FillingSource();
 }
 
-void PrimesVector::ShowSource()
+bool PrimesVector::TryShowSource()
 {
+	if (source.empty()) { return false; }
 	printf("[\n");
-	for (int i = 0; i < source.size() - 1; i++)
-	{
-		printf("%5i,", source.at(i));
-	}
+	for (int i = 0; i < source.size() - 1; i++) { printf("%5i,", source.at(i)); }
 	printf("%5i\n]\n\n", source.at(source.size() - 1));
+
+	return true;
 }
-void PrimesVector::ShowPrimes()
+bool PrimesVector::TryShowPrimes()
 {
+	if (primesInSource.empty()) { return false; }
 	printf("[\n");
-	for (int i = 0; i < primesInSource.size() - 1; i++)
-	{
-		printf("%5i,", primesInSource.at(i));
-	}
+	for (int i = 0; i < primesInSource.size() - 1; i++) { printf("%5i,", primesInSource.at(i)); }
 	printf("%5i\n]\n\n", primesInSource.at(primesInSource.size() - 1));
+
+	return true;
 }
 
 void PrimesVector::FillingSource()
 {
+	source.resize(maxLen);
 	//»нициадизаци€ генератора случайных чисел
 	srand(time(NULL));
 
 	//«аполнение массива случайными числами
-	for (unsigned short &el:source)
-		el = rand() % maxNum + 1;
+	for (unsigned short& el : source) { el = rand() % maxNum + 1; }	
 }
-void PrimesVector::FillingPrimes()
+bool PrimesVector::TryFillingPrimes()
 {
-	vector<unsigned short> arrayOfPrimes = sieveOfEratosthenes.primesNumber;//ћассив, хран€щий последовательность простых 
+	if (!primesInSource.empty() || source.empty()) { return false; }
+	primesInSource.resize(maxLen);
 
+	vector<unsigned short> arrayOfPrimes = sieveOfEratosthenes.primesNumber; //ћассив, хран€щий последовательность простых чисел
 	unsigned short indOfLastElInFillable = 0;
 
 	//ѕоиск совпадений с помощью бинарного поиска
@@ -52,7 +63,7 @@ void PrimesVector::FillingPrimes()
 		while (true)
 		{
 			int mid = (right + left) / 2;
-			if (source[i] > arrayOfPrimes.at(mid)) { left = mid + 1; }
+			if (source.at(i) > arrayOfPrimes.at(mid)) { left = mid + 1; }
 			else if (source.at(i) < arrayOfPrimes.at(mid)) { right = mid - 1; }
 			else
 			{
@@ -69,6 +80,7 @@ void PrimesVector::FillingPrimes()
 					}
 				}
 
+				indOfLastElInFillable++;
 				break;
 			}
 
@@ -77,6 +89,35 @@ void PrimesVector::FillingPrimes()
 	}
 
 	primesInSource.resize(indOfLastElInFillable);
+	return true;
 }
 
+unsigned short PrimesVector::GetAmountLargeCompNums()
+{
+	if (source.empty()) { return 0; }
+	if (amountLargeCompositeNums > -1) { return amountLargeCompositeNums; }
+	amountLargeCompositeNums++;
 
+	for (int i = 0; i < source.size(); i++)
+	{
+		unsigned counter = 2;
+		float sqrtNum = sqrt(source.at(i));
+
+		if ((sqrtNum - floor(sqrtNum)) == 0)
+		{ 
+			counter++; 
+			sqrtNum--;
+		}
+
+		sqrtNum = (int)sqrtNum;
+		
+		for (int j = 2; j <= sqrtNum; j++)
+		{
+			if (source.at(i) % j == 0) { counter += 2; }
+		}
+
+		if (counter > 3) { amountLargeCompositeNums++; }
+	}
+
+	return amountLargeCompositeNums;
+}

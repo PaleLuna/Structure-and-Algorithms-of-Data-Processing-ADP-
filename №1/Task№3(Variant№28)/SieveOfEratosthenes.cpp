@@ -2,6 +2,8 @@
 
 void SieveOfEratosthenes::SetAll(unsigned short limit)
 {
+	if (!primesNumber.empty()) primesNumber.clear();
+
 	primesNumber.resize(limit + 1);
 	
 	FillingSequence();
@@ -9,18 +11,11 @@ void SieveOfEratosthenes::SetAll(unsigned short limit)
 
 void SieveOfEratosthenes::FillingSequence()
 {
-	//Счетчик вычеркнутых составных чисел
-	unsigned short counterStrikeout = 0;
-
 	//Заполнение массива
-	for (int i = 0; i < primesNumber.size(); i++)
-	{
-		primesNumber.at(i) = i;
-	}
+	for (int i = 0; i < primesNumber.size(); i++) { primesNumber.at(i) = i; }
 
 	//Единица не является простым числом, сразу вычеркиваем
 	primesNumber.at(1) = 0;
-	counterStrikeout++;
 
 	int sqrtMaxNum = sqrt(primesNumber.size());
 
@@ -34,10 +29,11 @@ void SieveOfEratosthenes::FillingSequence()
 				if (primesNumber.at(j) != 0)
 				{
 					primesNumber.at(j) = 0;
-					counterStrikeout++;
 				}
 			}
 		}
 	}
-	primesNumber.resize(primesNumber.size() - ++counterStrikeout);
+
+	//Удаление всех нулевых элементов из контейнера
+	primesNumber.erase(remove(primesNumber.begin(), primesNumber.end(), 0), primesNumber.end());
 }

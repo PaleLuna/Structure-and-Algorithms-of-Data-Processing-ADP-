@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "SieveOfEratosthenes.h"
 #pragma once
 
 using namespace std;
@@ -7,22 +8,26 @@ using namespace std;
 class PrimesVector
 {
 	public:
-		PrimesVector(unsigned short userLen, unsigned short userMaxNum);
+		void SetVal(unsigned short userLen, unsigned short userMaxNum);
 
-		void ShowSource();
-		void ShowPrimes();
-		
-		PrimesVector& operator--();
+		bool TryShowSource();
+		bool TryShowPrimes();
+
+		bool TryFillingPrimes();
+
+		unsigned short GetAmountLargeCompNums();
 
 	private:
 		SieveOfEratosthenes sieveOfEratosthenes;
 
 		unsigned short maxNum;
+		unsigned short maxLen;
+		short amountLargeCompositeNums;
 
 		vector<unsigned short> source;
 		vector<unsigned short> primesInSource;
 
-		void FillingPrimes();
+		
 		void FillingSource();
 };
 
