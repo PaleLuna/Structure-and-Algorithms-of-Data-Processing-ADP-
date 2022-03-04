@@ -1,30 +1,43 @@
 #include "SequencePrimeNumbers.h"
 
-SequencePrimeNumbers::SequencePrimeNumbers(unsigned short userLen, unsigned short userNum)
+void SequencePrimeNumbers::SetUp(unsigned short userLen, unsigned short userNum)
 {
-	sourceLen = userLen;
-	maxNum = userNum;
+	if ((amountPrimesInSource != 0) && (sourceLen != 0))
+	{
+		amountPrimesInSource = 0;
+		sourceLen = 0;
 
-	sieveOfEratosthenes.SetAll(maxNum);
+		delete[] source;
+		delete[] primesInSource;
+	}
+
+	if(maxNum != userNum) { sieveOfEratosthenes.SetAll(userNum); }
+	
+	maxNum = userNum;
+	sourceLen = userLen;
 
 	source = new unsigned short[sourceLen];
 	primesInSource = new unsigned short[sourceLen];
-	
+
 	SourceFilling();
 	FindingPrimeNumbers();
 }
 
-void SequencePrimeNumbers::ShowSource()
+bool SequencePrimeNumbers::TryShowSource()
 {
+	if (sourceLen == 0) { return false; }
 	printf("[\n");
 	for (int i = 0; i < sourceLen - 1; i++) { printf("%5i,", source[i]); }
 	printf("%5i\n]\n\n", source[sourceLen - 1]);
 }
-void SequencePrimeNumbers::ShowPrimes()
+bool SequencePrimeNumbers::TryShowPrimes()
 {
+	if (amountPrimesInSource == 0) { return false; }
 	printf("[\n");
 	for (int i = 0; i < amountPrimesInSource - 1; i++) { printf("%5i,", primesInSource[i]); }
 	printf("%5i\n]\n\n", primesInSource[amountPrimesInSource - 1]);
+
+	return true;
 }
 
 void SequencePrimeNumbers::SourceFilling()
@@ -102,9 +115,10 @@ unsigned short SequencePrimeNumbers::ÑounterMinPrimes()
 	}
 	return counter;
 }
+
 SequencePrimeNumbers& SequencePrimeNumbers::operator--()
 {
-	if (amountPrimesInSource == 0)
+	if (amountPrimesInSource > 0)
 	{
 		unsigned short amountMinEl = ÑounterMinPrimes();
 		amountPrimesInSource -= amountMinEl;
@@ -118,11 +132,7 @@ SequencePrimeNumbers& SequencePrimeNumbers::operator--()
 		delete[] primesInSource;
 		primesInSource = tempArr;
 	}
-
-	else
-	{
-		printf("Ìàññèâ ïóñò!");
-	}
+	else { printf("Ìàññèâ ïóñò!\n"); }
 
 	return*this;
 	

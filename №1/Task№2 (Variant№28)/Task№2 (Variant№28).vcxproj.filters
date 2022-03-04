@@ -51,4 +51,9 @@
       <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="MenuText.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

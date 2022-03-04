@@ -1,37 +1,28 @@
 ﻿#include <iostream>
+#include <fstream>
 #include "SequencePrimeNumbers.h"
 #include "UserInput.h"
 
 using namespace std;
 
+void ShowMenu();
+
 int main()
 {
 	system("chcp 1251>nul");
-	
-	bool repeat = true;
+
+	ShowMenu();
+
+	bool isRun = true;
 
 	unsigned short maxLen;
 	unsigned short maxNum;
 
-	printf("Введите длину массива: ");
-	maxLen = UserInput(0);
-	printf("Введите максимально допустимое число: ");
-	maxNum = UserInput(0);
-	printf("\n\n\n");
-
-	SequencePrimeNumbers seqPrimes(maxLen, maxNum);
-
-	printf("Основная последовательность случайных чисел:\n");
-	seqPrimes.ShowSource();
-	printf("Последовательность простых чисел из основной последовательности:\n");
-	seqPrimes.ShowPrimes();
+	SequencePrimeNumbers seqPrimes;
 
 	unsigned short choise;
-	printf("0 - Выход\n");
-	printf("1 - Удалить минимальный элемент из последовательности простых чисел\n");
-	printf("2 - Вывод последовательности на экран\n");
 
-	do
+	while(isRun)
 	{
 		printf("Действие№ ");
 		choise = UserInput();
@@ -39,17 +30,52 @@ int main()
 		switch (choise)
 		{
 			case 0:
-				repeat = false;
+				isRun = !isRun;
+				printf("Выходим...\n");
 				break;
+
 			case 1:
+				printf("Введите длину массива: ");
+				maxLen = UserInput(0);
+				printf("Введите максимально допустимое число: ");
+				maxNum = UserInput(0);
+
+				seqPrimes.SetUp(maxLen, maxNum);
+				break;
+
+			case 2:
+				if (seqPrimes.TryShowSource()) { break; }
+				printf("Ошибка! Массив не инициализирован!\n");
+				break;
+
+			case 3:
+				if (seqPrimes.TryShowPrimes()) { break; }
+				printf("Ошибка! Массив не инициализирован или пуст!\n");
+				break;
+
+			case 4:
 				--seqPrimes;
 				break;
-			case 2:
-				seqPrimes.ShowPrimes();
-			default:
-				printf("Действие не определено.\n");
+
+			case 5:
+				system("cls");
+				ShowMenu();
 				break;
+
+			default:
+				printf("Действие не определено. Повторите попытку!\n");
 		}
-	} while (repeat);
+	}
 	return 0;
+}
+
+void ShowMenu()
+{
+	ifstream menuText("MenuText.txt");
+	if (menuText.is_open())
+	{
+		char text[1024];
+		menuText.getline(text, 1024, '\0');
+		printf("%s\n\n", text);
+	}
 }

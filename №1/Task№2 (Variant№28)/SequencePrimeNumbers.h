@@ -5,11 +5,11 @@
 class SequencePrimeNumbers
 {
 	public:
-		SequencePrimeNumbers(unsigned short userLen, unsigned short userNum);
+		void SetUp(unsigned short userLen, unsigned short userNum);
 		~SequencePrimeNumbers();
 
-		void ShowPrimes();
-		void ShowSource();
+		bool TryShowPrimes();
+		bool TryShowSource();
 
 		SequencePrimeNumbers& operator--();
 
@@ -18,8 +18,8 @@ class SequencePrimeNumbers
 	private:
 		SieveOfEratosthenes sieveOfEratosthenes;
 
-		unsigned short sourceLen;
-		unsigned short maxNum;
+		unsigned short sourceLen = 0;
+		unsigned short maxNum = 0;
 		unsigned short amountPrimesInSource = 0;
 	
 		unsigned short* source;
