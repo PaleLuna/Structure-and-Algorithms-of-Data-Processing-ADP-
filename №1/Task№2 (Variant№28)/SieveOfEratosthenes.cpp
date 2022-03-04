@@ -27,7 +27,7 @@ void SieveOfEratosthenes::FillingSequence()
 	int sqrtMaxNum = sqrt(sequenceLimit);
 
 	//Фильтрация массива, путем замены всех непростых чисел нулями
-	for (int i = 2; i < sqrtMaxNum; i++)
+	for (int i = 2; i <= sqrtMaxNum; i++)
 	{
 		if (primesNumber[i] != 0)
 		{
