@@ -47,6 +47,7 @@ int main()
 				break;
 
 			case 2:
+
 				if (!primesVec.TryFillingPrimes()) { printf("Ошибка! Основной массив пуст, либо массив простых чисел уже определен!\n"); break; }
 				break;
 
@@ -66,6 +67,7 @@ int main()
 					printf("Массив не содержит составных чисел с числом делителей больше трех, либо он пустой!\n");
 
 				break;
+
 			case 6:
 				system("cls");
 				ShowMenu();

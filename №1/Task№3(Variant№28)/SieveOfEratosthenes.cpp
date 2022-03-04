@@ -20,17 +20,15 @@ void SieveOfEratosthenes::FillingSequence()
 	int sqrtMaxNum = sqrt(primesNumber.size());
 
 	//Фильтрация массива, путем замены всех непростых чисел нулями
-	for (int i = 2; i < sqrtMaxNum; i++)
+	for (int i = 2; i <= sqrtMaxNum; i++)
 	{
 		if (primesNumber.at(i) != 0)
 		{
 			for (int j = 2 * i; j < primesNumber.size(); j += i)
 			{
-				if (primesNumber.at(j) != 0)
-				{
-					primesNumber.at(j) = 0;
-				}
+				primesNumber.at(j) = 0;
 			}
+			
 		}
 	}
 

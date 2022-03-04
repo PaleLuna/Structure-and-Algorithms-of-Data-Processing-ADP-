@@ -29,5 +29,7 @@ class PrimesVector
 
 		
 		void FillingSource();
+		void PrimesSort(int end);
+		bool IsPrime(int num);
 };
 
