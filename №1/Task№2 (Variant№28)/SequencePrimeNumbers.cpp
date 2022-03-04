@@ -27,8 +27,6 @@ void SequencePrimeNumbers::ShowPrimes()
 	printf("%5i\n]\n\n", primesInSource[amountPrimesInSource - 1]);
 }
 
-
-
 void SequencePrimeNumbers::SourceFilling()
 {
 	//Инициадизация генератора случайных чисел
@@ -40,7 +38,6 @@ void SequencePrimeNumbers::SourceFilling()
 }
 void SequencePrimeNumbers::FindingPrimeNumbers()
 {
-	//Поиск совпадений с помощью бинарного поиска
 	for (int i = 0; i < sourceLen; i++)
 	{
 		if (IsPrime(source[i]))
@@ -49,15 +46,20 @@ void SequencePrimeNumbers::FindingPrimeNumbers()
 
 			//Вставка простого числа, не нарушая возрастающую последовательность
 			primesInSource[indOfLastElInFillable] = source[i];
-			if (indOfLastElInFillable > 0)
-			{
-				PrimeSort(indOfLastElInFillable);
-			}
+			if (indOfLastElInFillable > 0) { PrimeSort(indOfLastElInFillable); }
 		}
-		
 	}
 
-	primesInSource = arrayCompressor.Compressor(primesInSource, amountPrimesInSource);
+	ResizePrimeSequence();
+}
+void SequencePrimeNumbers::ResizePrimeSequence()
+{
+	unsigned short* temp = new unsigned short[amountPrimesInSource];
+
+	for (unsigned short i = 0; i < amountPrimesInSource; i++) { temp[i] = primesInSource[i]; }
+
+	delete[] primesInSource;
+	primesInSource = temp;
 }
 
 bool SequencePrimeNumbers::IsPrime(int num)
@@ -82,22 +84,35 @@ bool SequencePrimeNumbers::IsPrime(int num)
 }
 void SequencePrimeNumbers::PrimeSort(int end)
 {
-	for (int i = 1; i < end; i++)
+	for (int i = 0; i < end; i++)
 	{
 			if (primesInSource[end] < primesInSource[i]) { std::swap(primesInSource[i], primesInSource[end]); }
 	}
 }
 
+unsigned short SequencePrimeNumbers::СounterMinPrimes()
+{
+	unsigned short minEl = primesInSource[0];
+	unsigned short counter = 1;
 
+	for (int i = 1; i < amountPrimesInSource; i++)
+	{
+		if (primesInSource[i] == minEl) { counter++; }
+		else { break; }
+	}
+	return counter;
+}
 SequencePrimeNumbers& SequencePrimeNumbers::operator--()
 {
-	if (amountPrimesInSource > 1)
+	if (amountPrimesInSource == 0)
 	{
-		unsigned short* tempArr = new unsigned short[--amountPrimesInSource];
+		unsigned short amountMinEl = СounterMinPrimes();
+		amountPrimesInSource -= amountMinEl;
+		unsigned short* tempArr = new unsigned short[amountPrimesInSource];;
 
 		for (unsigned short i = 0; i < amountPrimesInSource; i++)
 		{
-			tempArr[i] = primesInSource[i + 1];
+			tempArr[i] = primesInSource[i + amountMinEl];
 		}
 
 		delete[] primesInSource;
@@ -106,7 +121,7 @@ SequencePrimeNumbers& SequencePrimeNumbers::operator--()
 
 	else
 	{
-		printf("Длина массива слишком мала!");
+		printf("Массив пуст!");
 	}
 
 	return*this;

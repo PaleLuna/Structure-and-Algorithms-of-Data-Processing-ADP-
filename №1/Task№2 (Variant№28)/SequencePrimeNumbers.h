@@ -1,7 +1,5 @@
 #include <iostream>
 #include "SieveOfEratosthenes.h"
-#include "ArrayCompressor.h"
-
 #pragma once
 
 class SequencePrimeNumbers
@@ -19,7 +17,6 @@ class SequencePrimeNumbers
 
 	private:
 		SieveOfEratosthenes sieveOfEratosthenes;
-		ArrayCompressor arrayCompressor;
 
 		unsigned short sourceLen;
 		unsigned short maxNum;
@@ -30,7 +27,10 @@ class SequencePrimeNumbers
 
 		void SourceFilling();
 		void FindingPrimeNumbers();
+		void ResizePrimeSequence();
+		void PrimeSort(int end);
+
 
 		bool IsPrime(int num);
-		void PrimeSort(int end);
+		unsigned short ÑounterMinPrimes();
 };

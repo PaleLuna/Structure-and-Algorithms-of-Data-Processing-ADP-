@@ -39,9 +39,6 @@
     <ClCompile Include="SieveOfEratosthenes.cpp">
       <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
-    <ClCompile Include="ArrayCompressor.cpp">
-      <Filter>Исходные файлы\Классы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UserInput.h">
@@ -51,9 +48,6 @@
       <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
     <ClInclude Include="SieveOfEratosthenes.h">
-      <Filter>Файлы заголовков\Классы</Filter>
-    </ClInclude>
-    <ClInclude Include="ArrayCompressor.h">
       <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
   </ItemGroup>

@@ -44,7 +44,25 @@ void SieveOfEratosthenes::FillingSequence()
 
 	amountPrimes = sequenceLimit - ++counterStrikeout;
 	
-	primesNumber = arrayCompressor.CleaningArr(primesNumber, sequenceLimit, amountPrimes, 0);
+	CleaningArray();
+}
+
+void SieveOfEratosthenes::CleaningArray()
+{
+	unsigned short* tempArr = new unsigned short[amountPrimes];
+	unsigned short currentIndex = 0;
+	unsigned short trash = 0;
+
+	for (unsigned short i = 0; i < sequenceLimit; i++)
+	{
+		if ((primesNumber[i] != trash) && (currentIndex < amountPrimes))
+		{
+			tempArr[currentIndex] = primesNumber[i];
+			currentIndex++;
+		}
+	}
+	delete[] primesNumber;
+	primesNumber = tempArr;
 }
 
 SieveOfEratosthenes::~SieveOfEratosthenes()

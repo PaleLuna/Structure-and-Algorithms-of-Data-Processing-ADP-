@@ -26,9 +26,6 @@ int main()
 	printf("Последовательность простых чисел из основной последовательности:\n");
 	seqPrimes.ShowPrimes();
 
-	--seqPrimes;
-	seqPrimes.ShowPrimes();
-
 	unsigned short choise;
 	printf("0 - Выход\n");
 	printf("1 - Удалить минимальный элемент из последовательности простых чисел\n");

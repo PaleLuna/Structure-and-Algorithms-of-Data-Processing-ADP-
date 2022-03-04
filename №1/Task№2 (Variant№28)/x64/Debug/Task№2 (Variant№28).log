@@ -1,6 +1,2 @@
-﻿  SequencePrimeNumbers.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№2 (Variant№28)\SequencePrimeNumbers.cpp(35,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  SieveOfEratosthenes.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№2 (Variant№28)\SieveOfEratosthenes.cpp(27,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-  Создание кода...
+﻿  Task№2 (Variant№28).cpp
   Task№2 (Variant№28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№2 (Variant№28).exe

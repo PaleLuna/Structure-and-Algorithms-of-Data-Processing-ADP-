@@ -139,14 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArrayCompressor.cpp" />
     <ClCompile Include="SequencePrimeNumbers.cpp" />
     <ClCompile Include="SieveOfEratosthenes.cpp" />
     <ClCompile Include="Task№2 (Variant№28).cpp" />
     <ClCompile Include="UserInput.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArrayCompressor.h" />
     <ClInclude Include="SequencePrimeNumbers.h" />
     <ClInclude Include="SieveOfEratosthenes.h" />
     <ClInclude Include="UserInput.h" />
