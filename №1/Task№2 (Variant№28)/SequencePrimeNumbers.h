@@ -30,4 +30,7 @@ class SequencePrimeNumbers
 
 		void SourceFilling();
 		void FindingPrimeNumbers();
+
+		bool IsPrime(int num);
+		void PrimeSort(int end);
 };

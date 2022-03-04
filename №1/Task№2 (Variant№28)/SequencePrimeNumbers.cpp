@@ -14,26 +14,19 @@ SequencePrimeNumbers::SequencePrimeNumbers(unsigned short userLen, unsigned shor
 	FindingPrimeNumbers();
 }
 
-void SequencePrimeNumbers::ShowPrimes()
-{
-	printf("[\n");
-	for (int i = 0; i < amountPrimesInSource - 1; i++)
-	{
-		printf("%5i,", primesInSource[i]);
-	}
-
-	printf("%5i\n]\n\n", primesInSource[amountPrimesInSource - 1]);
-}
 void SequencePrimeNumbers::ShowSource()
 {
 	printf("[\n");
-	for (int i = 0; i < sourceLen - 1; i++)
-	{
-		printf("%5i,", source[i]);
-	}
-
-	printf("%5i\n]\n\n", source[sourceLen-1]);
+	for (int i = 0; i < sourceLen - 1; i++) { printf("%5i,", source[i]); }
+	printf("%5i\n]\n\n", source[sourceLen - 1]);
 }
+void SequencePrimeNumbers::ShowPrimes()
+{
+	printf("[\n");
+	for (int i = 0; i < amountPrimesInSource - 1; i++) { printf("%5i,", primesInSource[i]); }
+	printf("%5i\n]\n\n", primesInSource[amountPrimesInSource - 1]);
+}
+
 
 
 void SequencePrimeNumbers::SourceFilling()
@@ -47,45 +40,54 @@ void SequencePrimeNumbers::SourceFilling()
 }
 void SequencePrimeNumbers::FindingPrimeNumbers()
 {
-	int actualLengthPrime = sieveOfEratosthenes.amountPrimes; //ƒействительна€ длина последовательности простых чисел
-	unsigned short* arrayOfPrimes = sieveOfEratosthenes.primesNumber;//ћассив, хран€щий последовательность простых 
-
 	//ѕоиск совпадений с помощью бинарного поиска
 	for (int i = 0; i < sourceLen; i++)
 	{
-		int right = actualLengthPrime - 1;
-		int left = 0;
-
-		while (true)
+		if (IsPrime(source[i]))
 		{
-			int mid = (right + left) / 2;
-			if (source[i] > arrayOfPrimes[mid]) { left = mid + 1; }
-			else if (source[i] < arrayOfPrimes[mid]) { right = mid - 1; }
-			else
+			unsigned short indOfLastElInFillable = amountPrimesInSource++;
+
+			//¬ставка простого числа, не наруша€ возрастающую последовательность
+			primesInSource[indOfLastElInFillable] = source[i];
+			if (indOfLastElInFillable > 0)
 			{
-				unsigned short indOfLastElInFillable = amountPrimesInSource++; 
-				//¬ставка простого числа, не наруша€ возрастающую последовательность
-				primesInSource[indOfLastElInFillable] = source[i];
-				if (indOfLastElInFillable > 0)
-				{
-					for (int j = 1; j <= indOfLastElInFillable; j++)
-					{
-						for (int k = 0; k < indOfLastElInFillable; k++)
-						{
-							if (primesInSource[k] > primesInSource[j]) { std::swap(primesInSource[j], primesInSource[k]); }
-						}
-					}
-				}
-
-				break;
+				PrimeSort(indOfLastElInFillable);
 			}
-
-			if (left > right) { break; }
 		}
+		
 	}
 
 	primesInSource = arrayCompressor.Compressor(primesInSource, amountPrimesInSource);
 }
+
+bool SequencePrimeNumbers::IsPrime(int num)
+{
+	int actualLengthPrime = sieveOfEratosthenes.amountPrimes; //ƒействительна€ длина последовательности простых чисел
+	unsigned short* arrayOfPrimes = sieveOfEratosthenes.primesNumber; //ћассив, хран€щий последовательность простых 
+
+	int right = actualLengthPrime - 1;
+	int left = 0;
+
+	while (true)
+	{
+		int mid = (right + left) / 2;
+
+		if (num > arrayOfPrimes[mid]) { left = mid + 1; }
+		else if (num < arrayOfPrimes[mid]) { right = mid - 1; }
+		else { return true; }
+
+		if (left > right) { return false; }
+	}
+
+}
+void SequencePrimeNumbers::PrimeSort(int end)
+{
+	for (int i = 1; i < end; i++)
+	{
+			if (primesInSource[end] < primesInSource[i]) { std::swap(primesInSource[i], primesInSource[end]); }
+	}
+}
+
 
 SequencePrimeNumbers& SequencePrimeNumbers::operator--()
 {
