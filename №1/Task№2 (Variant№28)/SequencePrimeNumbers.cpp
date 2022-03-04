@@ -51,18 +51,18 @@ void SequencePrimeNumbers::SourceFilling()
 }
 void SequencePrimeNumbers::FindingPrimeNumbers()
 {
+	//Перебор элементов основного массива
 	for (int i = 0; i < sourceLen; i++)
 	{
 		if (IsPrime(source[i]))
 		{
-			unsigned short indOfLastElInFillable = amountPrimesInSource++;
+			unsigned short indOfLastElInFillable = amountPrimesInSource++; // Индекс последнего простого числа в массиве
 
-			//Вставка простого числа, не нарушая возрастающую последовательность
 			primesInSource[indOfLastElInFillable] = source[i];
 			if (indOfLastElInFillable > 0) { PrimeSort(indOfLastElInFillable); }
 		}
 	}
-
+	//Уменьшение размера массива
 	ResizePrimeSequence();
 }
 void SequencePrimeNumbers::ResizePrimeSequence()
@@ -80,8 +80,8 @@ bool SequencePrimeNumbers::IsPrime(int num)
 	int actualLengthPrime = sieveOfEratosthenes.amountPrimes; //Действительная длина последовательности простых чисел
 	unsigned short* arrayOfPrimes = sieveOfEratosthenes.primesNumber; //Массив, хранящий последовательность простых 
 
-	int right = actualLengthPrime - 1;
-	int left = 0;
+	int right = actualLengthPrime - 1; //Правая граница
+	int left = 0; //левая граница
 
 	while (true)
 	{
@@ -105,37 +105,38 @@ void SequencePrimeNumbers::PrimeSort(int end)
 
 unsigned short SequencePrimeNumbers::СounterMinPrimes()
 {
-	unsigned short minEl = primesInSource[0];
-	unsigned short counter = 1;
+	unsigned short minEl = primesInSource[0];//минимальный элемент
+	unsigned short counter = 1;//счетчик минимальных элементов в массиве
 
 	for (int i = 1; i < amountPrimesInSource; i++)
 	{
 		if (primesInSource[i] == minEl) { counter++; }
-		else { break; }
+		break;
 	}
 	return counter;
 }
 
 SequencePrimeNumbers& SequencePrimeNumbers::operator--()
 {
+	//только если количество элементов больше нуля
 	if (amountPrimesInSource > 0)
 	{
-		unsigned short amountMinEl = СounterMinPrimes();
-		amountPrimesInSource -= amountMinEl;
-		unsigned short* tempArr = new unsigned short[amountPrimesInSource];;
+		unsigned short amountMinEl = СounterMinPrimes(); //количество минимальных чисел
+		amountPrimesInSource -= amountMinEl; //Новый размер массива простых чисел
+
+		unsigned short* tempArr = new unsigned short[amountPrimesInSource]; //Временный массив
 
 		for (unsigned short i = 0; i < amountPrimesInSource; i++)
 		{
 			tempArr[i] = primesInSource[i + amountMinEl];
 		}
-
-		delete[] primesInSource;
+		
+		delete[] primesInSource; //удаление массива до сжатия
 		primesInSource = tempArr;
 	}
 	else { printf("Массив пуст!\n"); }
 
 	return*this;
-	
 }
 
 SequencePrimeNumbers::~SequencePrimeNumbers()
