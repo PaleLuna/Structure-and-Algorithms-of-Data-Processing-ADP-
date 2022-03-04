@@ -127,11 +127,8 @@ bool PrimesVector::IsPrime(int num)
 }
 void PrimesVector::PrimesSort(int end)
 {
-	for (int j = 1; j <= end; j++)
+	for (int i = 0; i < end; i++)
 	{
-		for (int k = 0; k < end; k++)
-		{
-			if (primesInSource.at(k) > primesInSource.at(j)) { std::swap(primesInSource.at(j), primesInSource.at(k)); }
-		}
+			if (primesInSource.at(end) < primesInSource.at(i)) { std::swap(primesInSource.at(i), primesInSource.at(end)); }
 	}
 }
