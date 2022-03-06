@@ -44,10 +44,10 @@ void SieveOfEratosthenes::FillingSequence()
 
 	amountPrimes = sequenceLimit - ++counterStrikeout;
 	
-	CleaningArray();
+	ZeroSorting();
 }
 
-void SieveOfEratosthenes::CleaningArray()
+void SieveOfEratosthenes::ZeroSorting()
 {
 	unsigned short* tempArr = new unsigned short[amountPrimes];
 	unsigned short currentIndex = 0;

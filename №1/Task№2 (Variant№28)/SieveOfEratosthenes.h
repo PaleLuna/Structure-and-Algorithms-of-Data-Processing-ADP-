@@ -14,7 +14,7 @@ class SieveOfEratosthenes
 		unsigned short sequenceLimit;
 
 		void FillingSequence();
-		void CleaningArray();
+		void ZeroSorting();
 		
 
 };

@@ -1,19 +1,15 @@
 #include "StaticSequence.h"
 
-void StaticSequence::SetUp()
+void StaticSequence::AutoSetUp()
 {
-	max_num = 0;
-
-	FillingSource();
+	AutoFillingSource();
 	FillingPrimeSeq();
 
 	sequenceExist = true;
 }
-void StaticSequence::SetUp(unsigned short maxNum)
+void StaticSequence::SetUp()
 {
-	max_num = maxNum;
-
-	AutoFillingSource();
+	FillingSource();
 	FillingPrimeSeq();
 
 	sequenceExist = true;
@@ -41,15 +37,14 @@ void StaticSequence::AutoFillingSource()
 
 	//«аполнение массива случайными числами
 	for (int i = 0; i < MAX_SIZE; i++)
-		source[i] = rand() % max_num + 1;
+		source[i] = rand() % MAX_NUM + 1;
 }
 void StaticSequence::FillingSource()
 {
 	for (int i = 0; i < MAX_SIZE; i++)
 	{
 		printf("sourece[%i] = ", i + 1);
-		unsigned short userNum = UserInput(0);
-		max_num = ((max_num < userNum) ? userNum : max_num);
+		unsigned short userNum = UserInput(0, MAX_NUM);
 
 		source[i] = userNum;
 	}
@@ -57,5 +52,43 @@ void StaticSequence::FillingSource()
 
 void StaticSequence::FillingPrimeSeq()
 {
+	//ѕеребор элементов основного массива
+	for (int i = 0; i < MAX_SIZE; i++)
+	{
+		if (IsPrime(source[i]))
+		{
+			unsigned short indOfLastElInFillable = amountPrimes++; // »ндекс последнего простого числа в массиве
 
+			primeSequence[indOfLastElInFillable] = source[i];
+			if (indOfLastElInFillable > 0) { Sort(indOfLastElInFillable); }
+		}
+	}
 }
+
+bool StaticSequence::IsPrime(unsigned short num)
+{
+	int actualLengthPrime = sieveOfEratosthenes.GetAmountPrimes(); //ƒействительна€ длина последовательности простых чисел
+	unsigned short* arrayOfPrimes = sieveOfEratosthenes.GetSequence(); //ћассив, хран€щий последовательность простых 
+
+	int right = actualLengthPrime - 1; //ѕрава€ граница
+	int left = 0; //лева€ граница
+
+	while (true)
+	{
+		int mid = (right + left) / 2;
+
+		if (num > arrayOfPrimes[mid]) { left = mid + 1; }
+		else if (num < arrayOfPrimes[mid]) { right = mid - 1; }
+		else { return true; }
+
+		if (left > right) { return false; }
+	}
+}
+void StaticSequence::Sort(unsigned short end)
+{
+	for (int i = 0; i < end; i++)
+	{
+		if (primeSequence[end] < primeSequence[i]) { std::swap(primeSequence[i], primeSequence[end]); }
+	}
+}
+

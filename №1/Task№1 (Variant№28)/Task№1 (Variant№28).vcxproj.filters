@@ -30,34 +30,33 @@
     <ClCompile Include="Task№1 (Variant№28).cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="FindingPrimeNumbers.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="ArrayCleaning.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="StaticSequence.cpp">
       <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
     <ClCompile Include="UserInput.cpp">
       <Filter>Исходные файлы\Модули</Filter>
     </ClCompile>
+    <ClCompile Include="SieveOfEratosthenes.cpp">
+      <Filter>Исходные файлы\Классы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FindingPrimeNumbers.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Constants.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="ArrayCleaning.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="StaticSequence.h">
       <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
     <ClInclude Include="UserInput.h">
       <Filter>Файлы заголовков\Модули</Filter>
     </ClInclude>
+    <ClInclude Include="SieveOfEratosthenes.h">
+      <Filter>Файлы заголовков\Классы</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Файлы заголовков\Модули</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="MenuText.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
   </ItemGroup>
 </Project>

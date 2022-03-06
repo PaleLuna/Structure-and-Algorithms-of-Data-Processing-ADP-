@@ -93,7 +93,6 @@ bool SequencePrimeNumbers::IsPrime(int num)
 
 		if (left > right) { return false; }
 	}
-
 }
 void SequencePrimeNumbers::PrimeSort(int end)
 {

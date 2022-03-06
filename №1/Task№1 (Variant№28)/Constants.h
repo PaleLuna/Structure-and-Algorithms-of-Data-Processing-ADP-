@@ -1,4 +1,4 @@
 #pragma once
 
-const int MAX_LEN = 50; //Максимальная длина основного массива
-const int MAX_NUM = 100; //Граница значений элементов массива
+const unsigned short MAX_SIZE = 15; //Максимальная длина основного массива
+const unsigned short MAX_NUM = 100;

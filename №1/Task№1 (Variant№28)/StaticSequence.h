@@ -1,19 +1,21 @@
 #include <iostream>
+#include "SieveOfEratosthenes.h"
+#include "Constants.h"
 #include "UserInput.h"
 #pragma once
 
 class StaticSequence
 {
 	public:
-		void SetUp(unsigned short maxNum);
 		void SetUp();
+		void AutoSetUp();
 		bool TryShowSource();
 		bool TryShowPrimes();
 
 	private:
-		static const unsigned short MAX_SIZE = 10;
+		SieveOfEratosthenes sieveOfEratosthenes;
+
 		unsigned short amountPrimes = 0;
-		unsigned short max_num;
 
 		bool sequenceExist = false;
 
@@ -24,8 +26,7 @@ class StaticSequence
 		void AutoFillingSource();
 
 		void FillingPrimeSeq();
-		void FindingPrimes();
-		void Sort();
+		void Sort(unsigned short end);
 
 		bool IsPrime(unsigned short num);
 
