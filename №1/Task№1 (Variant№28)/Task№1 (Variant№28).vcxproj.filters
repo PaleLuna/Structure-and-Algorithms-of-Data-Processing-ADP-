@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\Классы">
+      <UniqueIdentifier>{355616f8-be9a-48d3-81fc-0b2c5f6d1f70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Классы">
+      <UniqueIdentifier>{39c94f65-6fd1-4809-b662-076b2a142b57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Модули">
+      <UniqueIdentifier>{01473f78-920d-47a3-aafc-6486b03b47ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Модули">
+      <UniqueIdentifier>{96249976-02a2-434f-b619-13838270ee7d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Task№1 (Variant№28).cpp">
@@ -24,6 +36,12 @@
     <ClCompile Include="ArrayCleaning.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="StaticSequence.cpp">
+      <Filter>Исходные файлы\Классы</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInput.cpp">
+      <Filter>Исходные файлы\Модули</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FindingPrimeNumbers.h">
@@ -34,6 +52,12 @@
     </ClInclude>
     <ClInclude Include="ArrayCleaning.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticSequence.h">
+      <Filter>Файлы заголовков\Классы</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInput.h">
+      <Filter>Файлы заголовков\Модули</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

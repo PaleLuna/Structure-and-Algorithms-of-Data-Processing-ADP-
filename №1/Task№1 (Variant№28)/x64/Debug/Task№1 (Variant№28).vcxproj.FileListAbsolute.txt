@@ -2,3 +2,4 @@ C:\Users\rober\Documents\3.Учеба\Структура и алгоритмы �
 D:\3.Учеба\ВУЗ\Структура и Алгоритмы Обработки Данных (СиАОД)\Программы\Structure-and-Algorithms-of-Data-Processing-ADP-\Task№1 (Variant№28)\x64\Debug\Task№1 (Variant№28).exe
 C:\Users\rober\Documents\3.Учеба\Структура и алгоритмы обработки данных (СиАОД)\Программы\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№1 (Variant№28).exe
 D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№1 (Variant№28).exe
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№1 (Variant№28).exe
