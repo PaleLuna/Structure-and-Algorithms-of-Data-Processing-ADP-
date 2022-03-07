@@ -16,6 +16,9 @@ int main()
 	bool isRun = true;
 	short choise;
 
+	unsigned short sequenceLen;
+	unsigned short maxNum;
+
 	ShowMenu();
 
 	while (isRun)
@@ -31,11 +34,17 @@ int main()
 				break;
 
 			case 1:
-				staticSequence.AutoSetUp();
+				printf("Введите длину массива в пределах [1, %i]: ", MAX_SIZE);
+				sequenceLen = UserInput(1, MAX_SIZE);
+				printf("Введите максимальное число в последовательности в пределах [2, %i]: ", MAX_NUM);
+				maxNum = UserInput(2, MAX_NUM);
+
+				staticSequence.SetUp(sequenceLen, maxNum);
 				break;
 			
 			case 2:
-				printf("Значение массива должно быть в пределах [1, %i]\n", MAX_NUM);
+				printf("Вводимые числа должны быть в диапазоне [1, %i], а их количество  не более %i\n", MAX_NUM, MAX_SIZE);
+
 				staticSequence.SetUp();
 				break;
 			case 3:

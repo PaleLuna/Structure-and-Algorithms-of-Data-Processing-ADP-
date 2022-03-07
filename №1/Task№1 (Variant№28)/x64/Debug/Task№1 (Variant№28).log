@@ -1,7 +1,9 @@
-﻿  StaticSequence.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\StaticSequence.cpp(36,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+﻿  SieveOfEratosthenes.cpp
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\SieveOfEratosthenes.cpp(33,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  StaticSequence.cpp
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\StaticSequence.cpp(46,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   Task№1 (Variant№28).cpp
   Создание кода...
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\StaticSequence.cpp(31): warning C4715: StaticSequence::TryShowPrimes: значение возвращается не при всех путях выполнения
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\StaticSequence.cpp(24): warning C4715: StaticSequence::TryShowSource: значение возвращается не при всех путях выполнения
-  Task№1 (Variant№28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№1 (Variant№28).exe
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\StaticSequence.cpp(34): warning C4715: StaticSequence::TryShowSource: значение возвращается не при всех путях выполнения
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\StaticSequence.cpp(41): warning C4715: StaticSequence::TryShowPrimes: значение возвращается не при всех путях выполнения
+  Task№1 (Variant№28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№1 (Variant№28).exe

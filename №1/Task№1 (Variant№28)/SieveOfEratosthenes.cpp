@@ -1,7 +1,8 @@
 #include "SieveOfEratosthenes.h"
 
-SieveOfEratosthenes::SieveOfEratosthenes()
+void SieveOfEratosthenes::SetUp(unsigned short seqLim)
 {
+	sequenceLimit = ++seqLim;
 	CreateSequense();
 }
 
@@ -20,7 +21,7 @@ void SieveOfEratosthenes::CreateSequense()
 	unsigned short counterStrikeout = 0;
 
 	//Заполнение массива
-	for (int i = 0; i < MAX_NUM; i++)
+	for (int i = 0; i < sequenceLimit; i++)
 	{
 		primeSequence[i] = i;
 	}
@@ -29,14 +30,14 @@ void SieveOfEratosthenes::CreateSequense()
 	primeSequence[1] = 0;
 	counterStrikeout++;
 
-	int sqrtMaxNum = sqrt(MAX_NUM);
+	int sqrtMaxNum = sqrt(sequenceLimit);
 
 	//Фильтрация массива, путем замены всех непростых чисел нулями
 	for (int i = 2; i <= sqrtMaxNum; i++)
 	{
 		if (primeSequence[i] != 0)
 		{
-			for (int j = 2 * i; j < MAX_NUM; j += i)
+			for (int j = 2 * i; j < sequenceLimit; j += i)
 			{
 				if (primeSequence[j] != 0)
 				{
@@ -47,18 +48,18 @@ void SieveOfEratosthenes::CreateSequense()
 		}
 	}
 
-	amountPrimes = MAX_NUM - ++counterStrikeout;
+	amountPrimes = sequenceLimit - ++counterStrikeout;
 
 	ZeroSorting();
 }
 void SieveOfEratosthenes::ZeroSorting()
 {
-	for (int i = 0; i < MAX_NUM; i++)
+	for (int i = 0; i < sequenceLimit; i++)
 	{
 		if (primeSequence[i] == 0)
 		{
 			int nonZeroElInd = i;
-			for (; (nonZeroElInd < MAX_NUM-1) && primeSequence[nonZeroElInd] == 0; nonZeroElInd++);
+			for (; (nonZeroElInd < sequenceLimit -1) && primeSequence[nonZeroElInd] == 0; nonZeroElInd++);
 			std::swap(primeSequence[i], primeSequence[nonZeroElInd]);
 		}
 

@@ -8,7 +8,7 @@ class StaticSequence
 {
 	public:
 		void SetUp();
-		void AutoSetUp();
+		void SetUp(unsigned short userLen, unsigned short userMaxNum);
 		bool TryShowSource();
 		bool TryShowPrimes();
 
@@ -16,8 +16,8 @@ class StaticSequence
 		SieveOfEratosthenes sieveOfEratosthenes;
 
 		unsigned short amountPrimes = 0;
-
-		bool sequenceExist = false;
+		unsigned short sourceLen = 0;
+		unsigned short realMaxNum = 0;
 
 		unsigned short source[MAX_SIZE];
 		unsigned short primeSequence[MAX_SIZE];
@@ -29,6 +29,4 @@ class StaticSequence
 		void Sort(unsigned short end);
 
 		bool IsPrime(unsigned short num);
-
-
 };

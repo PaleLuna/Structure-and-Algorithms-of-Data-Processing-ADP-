@@ -1,30 +1,40 @@
 #include "StaticSequence.h"
 
-void StaticSequence::AutoSetUp()
+void StaticSequence::SetUp(unsigned short userLen, unsigned short userMaxNum)
 {
+	sourceLen = userLen;
+	amountPrimes = 0;
+	if (realMaxNum != userMaxNum)
+	{
+		realMaxNum = userMaxNum;
+		sieveOfEratosthenes.SetUp(realMaxNum);
+	}
+
 	AutoFillingSource();
 	FillingPrimeSeq();
-
-	sequenceExist = true;
 }
 void StaticSequence::SetUp()
 {
-	FillingSource();
-	FillingPrimeSeq();
+	unsigned short temp = realMaxNum;
+	amountPrimes = 0;
+	sourceLen = 0;
+	realMaxNum = 0;
 
-	sequenceExist = true;
+	FillingSource();
+	if (realMaxNum != temp) { sieveOfEratosthenes.SetUp(realMaxNum); }
+	FillingPrimeSeq();
 }
 
 bool StaticSequence::TryShowSource()
 {
-	if (!sequenceExist) { return false; }
+	if (sourceLen == 0) { return false; }
 	printf("[\n");
-	for (int i = 0; i < MAX_SIZE - 1; i++) { printf("%5i,", source[i]); }
-	printf("%5i\n]\n\n", source[MAX_SIZE - 1]);
+	for (int i = 0; i < sourceLen - 1; i++) { printf("%5i,", source[i]); }
+	printf("%5i\n]\n\n", source[sourceLen - 1]);
 }
 bool StaticSequence::TryShowPrimes()
 {
-	if (!sequenceExist) { return false; }
+	if (amountPrimes == 0) { return false; }
 	printf("[\n");
 	for (int i = 0; i < amountPrimes - 1; i++) { printf("%5i,", primeSequence[i]); }
 	printf("%5i\n]\n\n", primeSequence[amountPrimes - 1]);
@@ -36,31 +46,38 @@ void StaticSequence::AutoFillingSource()
 	srand(time(NULL));
 
 	//Заполнение массива случайными числами
-	for (int i = 0; i < MAX_SIZE; i++)
-		source[i] = rand() % MAX_NUM + 1;
+	for (int i = 0; i < sourceLen; i++)
+		source[i] = rand() % realMaxNum + 1;
 }
 void StaticSequence::FillingSource()
 {
 	for (int i = 0; i < MAX_SIZE; i++)
 	{
 		printf("sourece[%i] = ", i + 1);
-		unsigned short userNum = UserInput(0, MAX_NUM);
 
-		source[i] = userNum;
+		unsigned short userNum = UserInput(0, MAX_NUM);
+		if (userNum > 0)
+		{
+			realMaxNum = ((realMaxNum < userNum) ? userNum : realMaxNum);
+			source[i] = userNum;
+			sourceLen++;
+			continue;
+		}
+		break;
 	}
 }
 
 void StaticSequence::FillingPrimeSeq()
 {
 	//Перебор элементов основного массива
-	for (int i = 0; i < MAX_SIZE; i++)
+	for (int i = 0; i < sourceLen; i++)
 	{
 		if (IsPrime(source[i]))
 		{
 			unsigned short indOfLastElInFillable = amountPrimes++; // Индекс последнего простого числа в массиве
 
 			primeSequence[indOfLastElInFillable] = source[i];
-			if (indOfLastElInFillable > 0) { Sort(indOfLastElInFillable); }
+			if (indOfLastElInFillable > 1) { Sort(indOfLastElInFillable); }
 		}
 	}
 }
@@ -86,9 +103,8 @@ bool StaticSequence::IsPrime(unsigned short num)
 }
 void StaticSequence::Sort(unsigned short end)
 {
-	for (int i = 0; i < end; i++)
+	for (int i = 1; i < end; i++)
 	{
 		if (primeSequence[end] < primeSequence[i]) { std::swap(primeSequence[i], primeSequence[end]); }
 	}
 }
-

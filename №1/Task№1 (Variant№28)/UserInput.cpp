@@ -1,6 +1,6 @@
 #include "UserInput.h"
 
-unsigned short UserInput(unsigned short min, unsigned short max)
+unsigned short UserInput(short min, short max)
 {
 	short userInput;
 
@@ -8,7 +8,7 @@ unsigned short UserInput(unsigned short min, unsigned short max)
 	{
 		cin >> userInput;
 
-		if (cin.fail() || ((userInput <= min) || (userInput >= max)))
+		if (cin.fail())
 		{
 			printf("Ошибка! Введены некорректные данные. Повторите попытку. \n");
 
@@ -17,6 +17,13 @@ unsigned short UserInput(unsigned short min, unsigned short max)
 
 			continue;
 		}
+
+		if ((userInput < min) || (userInput > max))
+		{
+			printf("Число не входит в заданный диапазон!\n");
+			continue;
+		}
+		cin.ignore(65535, '\n');
 		break;
 	}
 
@@ -40,6 +47,7 @@ unsigned short UserInput()
 
 			continue;
 		}
+		cin.ignore(65535, '\n');
 		break;
 	}
 
