@@ -47,20 +47,25 @@ int main()
 
 				staticSequence.SetUp();
 				break;
+
 			case 3:
 				if (staticSequence.TryShowSource()) { break; }
 				printf("Массив пуст!\n");
 				break;
+
 			case 4:
 				if (staticSequence.TryShowPrimes()) { break; }
 				printf("Массив пуст!\n");
 				break;
+
 			case 5:
 				system("cls");
 				ShowMenu();
 				break;
-		default:
-			break;
+
+			default:
+				printf("Действие не определено.\n");
+				break;
 		}
 	}
 
@@ -72,7 +77,6 @@ void ShowMenu()
 	ifstream menuText("MenuText.txt");
 	if (menuText.is_open())
 	{
-		
 		char text[1024];
 		menuText.getline(text, 1024, '\0');
 		printf("%s\n\n", text);

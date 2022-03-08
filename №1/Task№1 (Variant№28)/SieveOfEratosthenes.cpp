@@ -59,9 +59,8 @@ void SieveOfEratosthenes::ZeroSorting()
 		if (primeSequence[i] == 0)
 		{
 			int nonZeroElInd = i;
-			for (; (nonZeroElInd < sequenceLimit -1) && primeSequence[nonZeroElInd] == 0; nonZeroElInd++);
+			for (; (nonZeroElInd < sequenceLimit - 1) && primeSequence[nonZeroElInd] == 0; nonZeroElInd++);
 			std::swap(primeSequence[i], primeSequence[nonZeroElInd]);
 		}
-
 	}
 }

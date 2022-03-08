@@ -1,8 +1,1 @@
-﻿  PrimesVector.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№3(Variant№28)\PrimesVector.cpp(46,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№3(Variant№28)\PrimesVector.cpp(87,17): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№3(Variant№28)\PrimesVector.cpp(95,18): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№3(Variant№28)\PrimesVector.cpp(112,38): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  Task№3(Variant№28).cpp
-  Создание кода...
-  Task№3(Variant№28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№3(Variant№28).exe
+﻿  Task№3(Variant№28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№3(Variant№28).exe

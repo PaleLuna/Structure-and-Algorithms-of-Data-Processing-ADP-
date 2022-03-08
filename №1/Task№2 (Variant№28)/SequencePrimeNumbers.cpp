@@ -109,7 +109,7 @@ unsigned short SequencePrimeNumbers::ÑounterMinPrimes()
 
 	for (int i = 1; i < amountPrimesInSource; i++)
 	{
-		if (primesInSource[i] == minEl) { counter++; }
+		if (primesInSource[i] == minEl) { counter++; continue; }
 		break;
 	}
 	return counter;
