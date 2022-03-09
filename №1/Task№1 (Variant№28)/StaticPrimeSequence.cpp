@@ -7,6 +7,8 @@ bool StaticPrimeSequence::TryShow()
 	printf("[\n");
 	for (int i = 0; i < amountPrimes - 1; i++) { printf("%4i,", primeSequence[i]); }
 	printf("%4i\n]\n\n", primeSequence[amountPrimes - 1]);
+
+	return true;
 }
 
 void StaticPrimeSequence::FillingPrimeSeq(StaticSequence& source)
@@ -15,10 +17,9 @@ void StaticPrimeSequence::FillingPrimeSeq(StaticSequence& source)
 	amountPrimes = 0;
 
 	unsigned short repetitionCounter = 1;
-	unsigned short len = source.GetLen();
 
 	//Перебор элементов основного массива
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < source.GetLen(); i++)
 	{
 		if (IsPrime(source[i]))
 		{

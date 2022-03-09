@@ -1,1 +1,3 @@
-﻿  Task№2 (Variant№28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№2 (Variant№28).exe
+﻿  DynamicPrimeSequence.cpp
+x64\Debug\DynamicPrimeSequence.obj : warning LNK4042: объект указан более одного раза; лишние не учитываются
+  Task№2 (Variant№28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№2 (Variant№28).exe

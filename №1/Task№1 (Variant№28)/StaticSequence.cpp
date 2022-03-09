@@ -15,6 +15,8 @@ bool StaticSequence::TryShow()
 	printf("[\n");
 	for (int i = 0; i < sourceLen - 1; i++) { printf("%4i,", source[i]); }
 	printf("%4i\n]\n\n", source[sourceLen - 1]);
+
+	return true;
 }
 unsigned short StaticSequence::GetMaxNum()
 {

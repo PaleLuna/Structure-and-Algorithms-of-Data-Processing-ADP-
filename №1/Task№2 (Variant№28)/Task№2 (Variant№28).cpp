@@ -1,71 +1,41 @@
 ﻿#include <iostream>
 #include <fstream>
-#include "SequencePrimeNumbers.h"
 #include "UserInput.h"
+#include "DynamicSequence.h"
+#include "DynamicPrimeSequence.h"
 
 using namespace std;
 
+DynamicSequence source;
+DynamicPrimeSequence dynamicPrimeSequence;
+
+bool isRun = true;
+unsigned short sequenceLen;
+unsigned short maxNum;
+
 void ShowMenu();
+void UserInteraction(unsigned short choise);
+void FillingArr();
 
 int main()
 {
 	system("chcp 1251>nul");
 
-	ShowMenu();
-
-	bool isRun = true;
-
-	unsigned short maxLen;
-	unsigned short maxNum;
-
-	SequencePrimeNumbers seqPrimes;
-
 	unsigned short choise;
 
-	while(isRun)
+	ShowMenu();
+
+	while (isRun)
 	{
-		printf("Действие№ ");
-		choise = UserInput();
-
-		switch (choise)
+		printf("Ваш выбор: ");
+		if (UserInput(choise))
 		{
-			case 0:
-				isRun = !isRun;
-				printf("Выходим...\n");
-				break;
-
-			case 1:
-				printf("Введите длину массива: ");
-				maxLen = UserInput(0);
-				printf("Введите максимально допустимое число: ");
-				maxNum = UserInput(0);
-
-				seqPrimes.SetUp(maxLen, maxNum);
-				break;
-
-			case 2:
-				if (seqPrimes.TryShowSource()) { break; }
-				printf("Ошибка! Массив не инициализирован!\n");
-				break;
-
-			case 3:
-				if (seqPrimes.TryShowPrimes()) { break; }
-				printf("Ошибка! Массив не инициализирован или пуст!\n");
-				break;
-
-			case 4:
-				--seqPrimes;
-				break;
-
-			case 5:
-				system("cls");
-				ShowMenu();
-				break;
-
-			default:
-				printf("Действие не определено. Повторите попытку!\n");
+			UserInteraction(choise);
+			continue;
 		}
+		printf("Ошибка! Введены некорректные данные, повторите попытку!\n");
 	}
+	printf("Выходим...\n");
 	return 0;
 }
 
@@ -77,5 +47,67 @@ void ShowMenu()
 		char text[1024];
 		menuText.getline(text, 1024, '\0');
 		printf("%s\n\n", text);
+	}
+}
+
+void UserInteraction(unsigned short choise)
+{
+	switch (choise)
+	{
+	case 0:
+		isRun = false;
+		break;
+	case 1:
+		printf("Введите длину массива: ");
+		if (!UserInput(sequenceLen)) { printf("Некорректные данные!\n"); break; }
+
+		printf("Введите максимальное число в последовательности: ");
+		if (!UserInput(maxNum)) { printf("Некорректные данные!\n"); break; }
+
+		source.SetUp(sequenceLen, maxNum);
+		break;
+
+	case 2:
+		FillingArr();
+		break;
+	case 3:
+		if (source.GetSize() > 0) { dynamicPrimeSequence.SetUp(source); break; }
+		printf("Ошибка вызова!\n");
+		break;
+
+	case 4:
+		if (source.TryShow()) { break; }
+		printf("Массив пуст!\n");
+		break;
+
+	case 5:
+		if (dynamicPrimeSequence.TryShow()) { break; }
+		printf("Массив пуст!\n");
+		break;
+
+	case 6:
+		system("cls");
+		ShowMenu();
+		break;
+
+	default:
+		printf("Действие не определено.\n");
+		break;
+	}
+}
+void FillingArr()
+{
+	unsigned short num;
+
+	for (int i = 0; i < MAX_SIZE; i++)
+	{
+		printf("Sequence[%i] = ", i + 1);
+		if (UserInput(num))
+		{
+			if (num != 0) { source.Add(num); continue; }
+			break;
+		}
+		i--;
+		printf("Введены некорректные данные!\n");
 	}
 }

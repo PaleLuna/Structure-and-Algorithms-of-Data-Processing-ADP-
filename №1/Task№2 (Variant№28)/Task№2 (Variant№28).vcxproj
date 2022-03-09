@@ -139,13 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SequencePrimeNumbers.cpp" />
+    <ClCompile Include="DynamicPrimeSequence.cpp" />
+    <ClCompile Include="DynamicPrimeSequence.h" />
+    <ClCompile Include="DynamicSequence.cpp" />
     <ClCompile Include="SieveOfEratosthenes.cpp" />
     <ClCompile Include="Task№2 (Variant№28).cpp" />
     <ClCompile Include="UserInput.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SequencePrimeNumbers.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="DynamicSequence.h" />
     <ClInclude Include="SieveOfEratosthenes.h" />
     <ClInclude Include="UserInput.h" />
   </ItemGroup>

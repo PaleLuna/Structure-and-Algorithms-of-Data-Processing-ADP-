@@ -1,48 +1,41 @@
 #include "UserInput.h"
 
-unsigned short UserInput(short min)
+bool UserInput(unsigned short& var, short min, short max)
 {
-	short userInput;
-	
-	while (true)
+	cin >> var;
+
+	if (cin.fail())
 	{
-		cin >> userInput;
-
-		if (cin.fail() || (userInput <= min))
-		{
-			printf("Ошибка! Введены некорректные данные. Повторите попытку. \n");
-
-			cin.clear();
-			cin.ignore(65535, '\n');
-			
-			continue;
-		}
-		break;
+		cin.clear();
+		cin.ignore(65535, '\n');
+		var = 0;
+		return false;
 	}
 
+	if ((var < min) || (var > max))
+	{
+		var = 0;
+		return false;
+	}
 
-	return userInput;
+	cin.ignore(65535, '\n');
+
+
+	return true;
 }
-unsigned short UserInput()
+bool UserInput(unsigned short& var)
 {
-	short userInput;
+	cin >> var;
 
-	while (true)
+	if (cin.fail())
 	{
-		cin >> userInput;
-
-		if (cin.fail())
-		{
-			printf("Ошибка! Введены некорректные данные. Повторите попытку. \n");
-
-			cin.clear();
-			cin.ignore(65535, '\n');
-
-			continue;
-		}
-		break;
+		cin.clear();
+		cin.ignore(65535, '\n');
+		var = 0;
+		return false;
 	}
 
+	cin.ignore(65535, '\n');
 
-	return userInput;
+	return true;
 }
