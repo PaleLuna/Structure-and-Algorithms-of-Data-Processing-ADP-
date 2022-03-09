@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SieveOfEratosthenes.cpp" />
+    <ClCompile Include="StaticPrimeSequence.cpp" />
     <ClCompile Include="StaticSequence.cpp" />
     <ClCompile Include="Task№1 (Variant№28).cpp" />
     <ClCompile Include="UserInput.cpp" />
@@ -147,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="Constants.h" />
     <ClInclude Include="SieveOfEratosthenes.h" />
+    <ClInclude Include="StaticPrimeSequence.h" />
     <ClInclude Include="StaticSequence.h" />
     <ClInclude Include="UserInput.h" />
   </ItemGroup>

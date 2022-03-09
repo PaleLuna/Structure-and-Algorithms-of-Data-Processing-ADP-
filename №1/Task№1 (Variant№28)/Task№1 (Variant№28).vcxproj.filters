@@ -39,6 +39,9 @@
     <ClCompile Include="SieveOfEratosthenes.cpp">
       <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
+    <ClCompile Include="StaticPrimeSequence.cpp">
+      <Filter>Исходные файлы\Классы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StaticSequence.h">
@@ -52,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="Constants.h">
       <Filter>Файлы заголовков\Модули</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticPrimeSequence.h">
+      <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
