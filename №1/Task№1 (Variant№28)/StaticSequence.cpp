@@ -69,6 +69,8 @@ void StaticSequence::FillingSource()
 
 void StaticSequence::FillingPrimeSeq()
 {
+	unsigned short repetitionCounter = -1;
+
 	//Перебор элементов основного массива
 	for (int i = 0; i < sourceLen; i++)
 	{
@@ -77,7 +79,8 @@ void StaticSequence::FillingPrimeSeq()
 			unsigned short indOfLastElInFillable = amountPrimes++; // Индекс последнего простого числа в массиве
 
 			primeSequence[indOfLastElInFillable] = source[i];
-			if (indOfLastElInFillable > 1) { Sort(indOfLastElInFillable); }
+			if (primeSequence[indOfLastElInFillable] == primeSequence[0]) { repetitionCounter++; }
+			if (indOfLastElInFillable > 1) { Sort(repetitionCounter, indOfLastElInFillable); }
 		}
 	}
 }
@@ -101,10 +104,21 @@ bool StaticSequence::IsPrime(unsigned short num)
 		if (left > right) { return false; }
 	}
 }
-void StaticSequence::Sort(unsigned short end)
+void StaticSequence::Sort(unsigned short start, unsigned short end)
 {
-	for (int i = 1; i < end; i++)
+	unsigned short el = primeSequence[end];
+	if (primeSequence[end] == primeSequence[0])
 	{
-		if (primeSequence[end] < primeSequence[i]) { std::swap(primeSequence[i], primeSequence[end]); }
+		for (int j = end - 1; (j > start) && (primeSequence[end] != primeSequence[j]); j--)
+		{
+			std::swap(primeSequence[end--], primeSequence[j]);
+		}
+	}
+	else
+	{
+		for (int i = start; i < end; i++)
+		{
+			if (primeSequence[end] < primeSequence[i]) { std::swap(primeSequence[i], primeSequence[end]); }
+		}
 	}
 }

@@ -26,7 +26,7 @@ class StaticSequence
 		void AutoFillingSource();
 
 		void FillingPrimeSeq();
-		void Sort(unsigned short end);
+		void Sort(unsigned short start, unsigned short end);
 
 		bool IsPrime(unsigned short num);
 };
