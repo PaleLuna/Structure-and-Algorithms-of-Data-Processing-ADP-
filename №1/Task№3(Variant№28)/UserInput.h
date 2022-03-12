@@ -3,5 +3,5 @@
 
 using namespace std;
 
-unsigned short UserInput(short min);
-unsigned short UserInput();
+bool UserInput(unsigned short& var, short min, short max);
+bool UserInput(unsigned short& var);

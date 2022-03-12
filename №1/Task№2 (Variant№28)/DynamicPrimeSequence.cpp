@@ -7,11 +7,10 @@ void DynamicPrimeSequence::SetUp(DynamicSequence& obj)
 		amountPrimes = 0;
 		delete[] primeSequence;
 	}
-	else { source = obj; }
-	primeSequence = new unsigned short[source.GetSize()];
-	sieveOfEratosthenes.SetAll(source.GetMaxNum());
+	primeSequence = new unsigned short[obj.GetSize()];
+	sieveOfEratosthenes.SetAll(obj.GetMaxNum());
 
-	FindingPrimeNumbers();
+	FindingPrimeNumbers(obj);
 }
 bool DynamicPrimeSequence::TryShow()
 {
@@ -23,7 +22,7 @@ bool DynamicPrimeSequence::TryShow()
 	return true;
 }
 
-void DynamicPrimeSequence::FindingPrimeNumbers()
+void DynamicPrimeSequence::FindingPrimeNumbers(DynamicSequence& source)
 {
 	unsigned short counterFirstIncommingNum = 1;
 
@@ -107,7 +106,7 @@ DynamicPrimeSequence& DynamicPrimeSequence::operator--()
 {
 	//только если количество элементов больше нуля
 	if (amountPrimes <= 0) { printf("Массив пуст!\n"); return*this; }
-	
+
 	unsigned short min = FindMinEl();
 	unsigned short j = 0; //Счетчик записанных чисел
 
@@ -119,6 +118,7 @@ DynamicPrimeSequence& DynamicPrimeSequence::operator--()
 	amountPrimes -= amountPrimes - j;
 	ResizePrimeSequence();
 }
+
 DynamicPrimeSequence::~DynamicPrimeSequence()
 {
 	if (amountPrimes != 0) { delete[] primeSequence; }

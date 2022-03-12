@@ -8,17 +8,17 @@ class DynamicPrimeSequence
 	public:
 		void SetUp(DynamicSequence& obj);
 		bool TryShow();
-		void FindingPrimeNumbers();
 
 		DynamicPrimeSequence& operator--();
 		~DynamicPrimeSequence();
 
 	private:
 		SieveOfEratosthenes sieveOfEratosthenes;
-		DynamicSequence source;
 
 		unsigned short amountPrimes = 0;
 		unsigned short* primeSequence;
+
+		void FindingPrimeNumbers(DynamicSequence& source);
 
 		bool IsPrime(int num);
 

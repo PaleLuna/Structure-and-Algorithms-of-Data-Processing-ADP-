@@ -139,16 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="PrimesVector.cpp" />
+    <ClCompile Include="VectorSequence.cpp" />
     <ClCompile Include="SieveOfEratosthenes.cpp" />
     <ClCompile Include="Task№3(Variant№28).cpp" />
     <ClCompile Include="UserInput.cpp" />
+    <ClCompile Include="VectorPrimeSequence.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PrimesVector.h" />
+    <ClInclude Include="VectorSequence.h" />
     <ClInclude Include="SieveOfEratosthenes.h" />
-    <ClInclude Include="Task№3(Variant№28).h" />
     <ClInclude Include="UserInput.h" />
+    <ClInclude Include="VectorPrimeSequence.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="MenuText.txt" />

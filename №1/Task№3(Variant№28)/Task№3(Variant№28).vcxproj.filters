@@ -33,10 +33,13 @@
     <ClCompile Include="UserInput.cpp">
       <Filter>Исходные файлы\Базовые модули</Filter>
     </ClCompile>
-    <ClCompile Include="PrimesVector.cpp">
+    <ClCompile Include="VectorSequence.cpp">
       <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
     <ClCompile Include="SieveOfEratosthenes.cpp">
+      <Filter>Исходные файлы\Классы</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorPrimeSequence.cpp">
       <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,14 +47,14 @@
     <ClInclude Include="UserInput.h">
       <Filter>Файлы заголовков\Базовые модули</Filter>
     </ClInclude>
-    <ClInclude Include="PrimesVector.h">
+    <ClInclude Include="VectorSequence.h">
       <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
     <ClInclude Include="SieveOfEratosthenes.h">
       <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
-    <ClInclude Include="Task№3(Variant№28).h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="VectorPrimeSequence.h">
+      <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
