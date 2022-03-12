@@ -25,6 +25,8 @@ bool DynamicPrimeSequence::TryShow()
 
 void DynamicPrimeSequence::FindingPrimeNumbers()
 {
+	unsigned short counterFirstIncommingNum = 1;
+
 	//Перебор элементов основного массива
 	for (int i = 0; i < source.GetSize(); i++)
 	{
