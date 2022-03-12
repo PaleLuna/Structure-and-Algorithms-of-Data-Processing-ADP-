@@ -26,7 +26,7 @@ class DynamicPrimeSequence
 		void Sort(unsigned short start, unsigned short end);
 		void MovingToBeginning(unsigned short start, unsigned short end);
 
-		unsigned short ÑounterMinPrimes();
+		unsigned short FindMinEl();
 		void ResizePrimeSequence();
 
 };

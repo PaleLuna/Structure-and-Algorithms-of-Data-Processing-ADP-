@@ -79,19 +79,6 @@ void DynamicPrimeSequence::MovingToBeginning(unsigned short start, unsigned shor
 		std::swap(primeSequence[end--], primeSequence[--j]);
 }
 
-unsigned short DynamicPrimeSequence::СounterMinPrimes()
-{
-	unsigned short minEl = primeSequence[0];//минимальный элемент
-	unsigned short counter = 1;//счетчик минимальных элементов в массиве
-
-	for (int i = 1; i < amountPrimes; i++)
-	{
-		if (primeSequence[i] == minEl) { counter++; continue; }
-		break;
-	}
-	return counter;
-}
-
 void DynamicPrimeSequence::ResizePrimeSequence()
 {
 	unsigned short* temp = new unsigned short[amountPrimes];
@@ -102,29 +89,35 @@ void DynamicPrimeSequence::ResizePrimeSequence()
 	primeSequence = temp;
 }
 
+unsigned short DynamicPrimeSequence::FindMinEl()
+{
+	unsigned short minEl = primeSequence[0];
+	for (int i = 1; i < amountPrimes; i++)
+	{
+		if (minEl == primeSequence[i]) { continue; }
+		minEl = (minEl < primeSequence[i]) ? minEl : primeSequence[i];
+		break;
+	}
+	return minEl;
+}
+
 DynamicPrimeSequence& DynamicPrimeSequence::operator--()
 {
 	//только если количество элементов больше нуля
-	if (amountPrimes > 0)
+	if (amountPrimes <= 0) { printf("Массив пуст!\n"); return*this; }
+	
+	unsigned short min = FindMinEl();
+	unsigned short j = 0; //Счетчик записанных чисел
+
+	for (int i = 0; i < amountPrimes; i++)
 	{
-		unsigned short amountMinEl = СounterMinPrimes(); //количество минимальных чисел
-		amountPrimes -= amountMinEl; //Новый размер массива простых чисел
-
-		unsigned short* tempArr = new unsigned short[amountPrimes]; //Временный массив
-
-		for (unsigned short i = 0; i < amountPrimes; i++)
-		{
-			tempArr[i] = primeSequence[i + amountMinEl];
-		}
-
-		delete[] primeSequence; //удаление массива до сжатия
-		primeSequence = tempArr;
+		if (primeSequence[i] != min) { primeSequence[j++] = primeSequence[i]; }
 	}
-	else { printf("Массив пуст!\n"); }
 
-	return*this;
+	amountPrimes -= amountPrimes - j;
+	ResizePrimeSequence();
 }
 DynamicPrimeSequence::~DynamicPrimeSequence()
 {
-	delete[] primeSequence;
+	if (amountPrimes != 0) { delete[] primeSequence; }
 }

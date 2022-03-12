@@ -1,18 +1,5 @@
 #include "DynamicSequence.h"
 
-void DynamicSequence::SetUp(unsigned short userLen, unsigned short userNum)
-{
-	if (size != 0)
-	{
-		delete[] sequence;
-	}
-	size = userLen;
-	maxNum = userNum;
-
-	ResizeSequence();
-	Filling();
-}
-
 unsigned short DynamicSequence::GetSize()
 {
 	return size;
@@ -20,6 +7,27 @@ unsigned short DynamicSequence::GetSize()
 unsigned short DynamicSequence::GetMaxNum()
 {
 	return maxNum;
+}
+
+void DynamicSequence::SetUp(unsigned short userLen, unsigned short userNum)
+{
+	if (size != 0){ delete[] sequence; }
+
+	size = userLen;
+	maxNum = userNum;
+
+	sequence = new unsigned short[size];
+	Filling();
+}
+void DynamicSequence::Reset()
+{
+	if (size != 0)
+	{
+		size = 0;
+		delete[] sequence;
+	}
+
+	sequence = new unsigned short[MAX_SIZE];
 }
 
 bool DynamicSequence::TryShow()
@@ -34,7 +42,6 @@ bool DynamicSequence::TryShow()
 
 void DynamicSequence::Add(int num)
 {
-	size = 0;
 	sequence[size++] = num;
 	maxNum = ((maxNum < sequence[size - 1]) ? sequence[size - 1] : maxNum);
 }
@@ -48,22 +55,11 @@ void DynamicSequence::Filling()
 		sequence[i] = rand() % maxNum + 1;
 }
 
-void DynamicSequence::ResizeSequence()
-{
-	unsigned short* temp = new unsigned short[size];
-
-	for (unsigned short i = 0; i < size; i++) { temp[i] = sequence[i]; }
-
-	delete[] sequence;
-	sequence = temp;
-}
-
 unsigned short DynamicSequence::operator[](int num)
 {
 	return sequence[num];
 }
-
 DynamicSequence::~DynamicSequence()
 {
-	delete[] sequence;
+	if(size != 0){ delete[] sequence; }
 }

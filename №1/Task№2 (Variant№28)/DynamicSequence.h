@@ -12,6 +12,7 @@ class DynamicSequence
 
 		bool TryShow();
 		void Add(int num);
+		void Reset();
 
 		unsigned short operator[](int num);
 		~DynamicSequence();
@@ -20,8 +21,7 @@ class DynamicSequence
 		unsigned short size = 0;
 		unsigned short maxNum = 0;
 	
-		unsigned short* sequence = new unsigned short[MAX_SIZE];
+		unsigned short* sequence;
 
 		void Filling();
-		void ResizeSequence();
 };

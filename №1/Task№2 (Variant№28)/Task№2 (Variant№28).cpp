@@ -68,6 +68,7 @@ void UserInteraction(unsigned short choise)
 		break;
 
 	case 2:
+		source.Reset();
 		FillingArr();
 		break;
 	case 3:
@@ -86,6 +87,10 @@ void UserInteraction(unsigned short choise)
 		break;
 
 	case 6:
+		--dynamicPrimeSequence;
+		break;
+
+	case 7:
 		system("cls");
 		ShowMenu();
 		break;
