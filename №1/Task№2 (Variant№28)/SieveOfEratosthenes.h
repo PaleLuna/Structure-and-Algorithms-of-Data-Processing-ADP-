@@ -1,4 +1,5 @@
 #include <cmath>
+#include <iostream>
 #pragma once
 
 class SieveOfEratosthenes
@@ -15,6 +16,4 @@ class SieveOfEratosthenes
 
 		void FillingSequence();
 		void ZeroSorting();
-		
-
 };

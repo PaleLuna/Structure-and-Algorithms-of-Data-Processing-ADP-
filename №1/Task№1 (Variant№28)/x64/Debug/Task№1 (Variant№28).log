@@ -1,9 +1,9 @@
 ﻿  SieveOfEratosthenes.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\SieveOfEratosthenes.cpp(33,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\SieveOfEratosthenes.cpp(33,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
   StaticPrimeSequence.cpp
   StaticSequence.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\StaticSequence.cpp(38,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\StaticSequence.cpp(38,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   Task№1 (Variant№28).cpp
   UserInput.cpp
   Создание кода...
-  Task№1 (Variant№28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№1 (Variant№28).exe
+  Task№1 (Variant№28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№1 (Variant№28).exe

@@ -61,5 +61,5 @@ unsigned short DynamicSequence::operator[](int num)
 }
 DynamicSequence::~DynamicSequence()
 {
-	if(size != 0){ delete[] sequence; }
+	if(size != 0) { delete[] sequence; }
 }

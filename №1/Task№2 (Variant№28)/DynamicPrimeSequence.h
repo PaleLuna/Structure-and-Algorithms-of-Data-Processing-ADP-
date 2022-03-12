@@ -27,5 +27,4 @@ class DynamicPrimeSequence
 
 		unsigned short FindMinEl();
 		void ResizePrimeSequence();
-
 };

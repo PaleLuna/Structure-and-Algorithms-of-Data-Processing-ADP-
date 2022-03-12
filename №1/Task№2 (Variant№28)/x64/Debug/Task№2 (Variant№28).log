@@ -1,3 +1,12 @@
 ﻿  DynamicPrimeSequence.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№2 (Variant№28)\DynamicPrimeSequence.cpp(119): warning C4715: DynamicPrimeSequence::operator--: значение возвращается не при всех путях выполнения
-  Task№2 (Variant№28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№2 (Variant№28).exe
+  DynamicPrimeSequence.h
+  DynamicSequence.cpp
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№2 (Variant№28)\DynamicSequence.cpp(51,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  SieveOfEratosthenes.cpp
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№2 (Variant№28)\SieveOfEratosthenes.cpp(27,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  Task№2 (Variant№28).cpp
+  UserInput.cpp
+  Создание кода...
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№2 (Variant№28)\DynamicPrimeSequence.cpp(121): warning C4715: DynamicPrimeSequence::operator--: значение возвращается не при всех путях выполнения
+x64\Debug\DynamicPrimeSequence.obj : warning LNK4042: объект указан более одного раза; лишние не учитываются
+  Task№2 (Variant№28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№2 (Variant№28).exe

@@ -67,5 +67,5 @@ void SieveOfEratosthenes::ZeroSorting()
 
 SieveOfEratosthenes::~SieveOfEratosthenes()
 {
-	delete[] primesNumber;
+	if(amountPrimes > 0) delete[] primesNumber;
 }
