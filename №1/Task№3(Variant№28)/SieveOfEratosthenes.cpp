@@ -6,10 +6,10 @@ void SieveOfEratosthenes::SetAll(unsigned short limit)
 
 	primesNumber.resize(limit + 1);
 	
-	FillingSequence();
+	CreateSequence();
 }
 
-void SieveOfEratosthenes::FillingSequence()
+void SieveOfEratosthenes::CreateSequence()
 {
 	//Заполнение массива
 	for (int i = 0; i < primesNumber.size(); i++) { primesNumber.at(i) = i; }

@@ -51,8 +51,8 @@ void DynamicPrimeSequence::FindingPrimeNumbers(DynamicSequence& source)
 
 bool DynamicPrimeSequence::IsPrime(int num)
 {
-	int actualLengthPrime = sieveOfEratosthenes.amountPrimes; //ƒействительна€ длина последовательности простых чисел
-	unsigned short* arrayOfPrimes = sieveOfEratosthenes.primesNumber; //ћассив, хран€щий последовательность простых чисел
+	int actualLengthPrime = sieveOfEratosthenes.GetAmountPrimes(); //ƒействительна€ длина последовательности простых чисел
+	unsigned short* arrayOfPrimes = sieveOfEratosthenes.GetSequence(); //ћассив, хран€щий последовательность простых чисел
 
 	int right = actualLengthPrime - 1; //ѕрава€ граница
 	int left = 0; //лева€ граница

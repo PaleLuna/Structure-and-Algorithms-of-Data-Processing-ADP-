@@ -10,6 +10,6 @@ class SieveOfEratosthenes
 		void SetAll(unsigned short limit);
 
 	private:
-		void FillingSequence();
+		void CreateSequence();
 };
 

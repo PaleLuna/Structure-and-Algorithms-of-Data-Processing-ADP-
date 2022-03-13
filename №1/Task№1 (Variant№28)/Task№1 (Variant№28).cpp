@@ -21,16 +21,16 @@ int main()
 {
 	system("chcp 1251>nul");
 
-	unsigned short choise;
+	unsigned short choiсe;
 
 	ShowMenu();
 
 	while (isRun)
 	{
 		printf("Ваш выбор: ");
-		if (UserInput(choise))
+		if (UserInput(choiсe))
 		{
-			UserInteraction(choise);
+			UserInteraction(choiсe);
 			continue;
 		}
 		printf("Ошибка! Введены некорректные данные, повторите попытку!\n");
@@ -69,6 +69,7 @@ void UserInteraction(unsigned short choise)
 
 		case 2:
 			printf("Вводимые числа должны быть в диапазоне [1, %i], а их количество  не более %i\n", MAX_NUM, MAX_SIZE);
+			staticSequence.Reset();
 			FillingArr();
 			break;
 		case 3:

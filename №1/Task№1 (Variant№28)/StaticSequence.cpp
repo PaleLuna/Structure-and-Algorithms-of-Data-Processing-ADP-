@@ -7,6 +7,10 @@ void StaticSequence::SetUp(unsigned short userLen, unsigned short userMaxNum)
 
 	AutoFillingSource();
 }
+void StaticSequence::Reset()
+{
+	sourceLen = 0;
+}
 
 bool StaticSequence::TryShow()
 {

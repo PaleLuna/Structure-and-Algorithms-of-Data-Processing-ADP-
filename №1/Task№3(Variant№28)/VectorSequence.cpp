@@ -21,7 +21,7 @@ void VectorSequence::SetUp(unsigned short userLen, unsigned short userMaxNum)
 	{
 		Reset();
 	}
-	
+	amountLargeCompositeNums = -1;
 	sequence.resize(userLen);
 	FillingSource();
 }

@@ -1,15 +1,24 @@
 #include "SieveOfEratosthenes.h"
 
+unsigned short SieveOfEratosthenes::GetAmountPrimes()
+{
+	return amountPrimes;
+}
+unsigned short* SieveOfEratosthenes::GetSequence()
+{
+	return primesNumber;
+}
+
 void SieveOfEratosthenes::SetAll(unsigned short limit)
 {
 	sequenceLimit = limit;
 	primesNumber = new unsigned short[++sequenceLimit];
 
 
-	FillingSequence();
+	CreateSequence();
 }
 
-void SieveOfEratosthenes::FillingSequence()
+void SieveOfEratosthenes::CreateSequence()
 {
 	//—четчик вычеркнутых составных чисел
 	unsigned short counterStrikeout = 0;
@@ -46,7 +55,6 @@ void SieveOfEratosthenes::FillingSequence()
 	
 	ZeroSorting();
 }
-
 void SieveOfEratosthenes::ZeroSorting()
 {
 	unsigned short* tempArr = new unsigned short[amountPrimes];

@@ -6,13 +6,14 @@ class StaticSequence
 {
 	public:
 		void SetUp(unsigned short userLen, unsigned short userMaxNum);
+		void Add(unsigned short num);
+		void Reset();
+		
 		bool TryShow();
-
 		unsigned short GetMaxNum();
 		unsigned short GetLen();
-		void Add(unsigned short num);
 
-		unsigned short operator[](int num);
+		unsigned short operator[](int index);
 
 	private:
 		unsigned short sourceLen = 0;
