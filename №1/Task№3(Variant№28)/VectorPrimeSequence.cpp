@@ -36,8 +36,7 @@ bool VectorPrimeSequence::TryFillingPrimes(VectorSequence& source)
 			{
 				if (primeSequence.at(indOfLastElInFillable) == primeSequence.at(0))
 				{
-					MovingToBeginning(repeat, indOfLastElInFillable);
-					repeat++;
+					MovingToBeginning(repeat++, indOfLastElInFillable);
 					continue;
 				}
 				Sort(repeat, indOfLastElInFillable);

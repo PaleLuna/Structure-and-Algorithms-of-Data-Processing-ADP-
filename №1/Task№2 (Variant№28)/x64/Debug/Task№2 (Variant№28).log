@@ -1,2 +1,3 @@
-﻿  Task№2 (Variant№28).cpp
-  Task№2 (Variant№28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№2 (Variant№28).exe
+﻿  DynamicPrimeSequence.cpp
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№2 (Variant№28)\DynamicPrimeSequence.cpp(120): warning C4715: DynamicPrimeSequence::operator--: значение возвращается не при всех путях выполнения
+  Task№2 (Variant№28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№2 (Variant№28).exe

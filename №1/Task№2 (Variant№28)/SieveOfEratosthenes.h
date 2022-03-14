@@ -5,15 +5,17 @@
 class SieveOfEratosthenes
 {
 	public:
-		unsigned short* primesNumber;
-		unsigned short amountPrimes = 0;
+		unsigned short GetAmountPrimes();
+		unsigned short* GetSequence();
+		void SetAll(unsigned short limit);
 
 		~SieveOfEratosthenes();
-		void SetAll(unsigned short limit);
 
 	private:
 		unsigned short sequenceLimit;
+		unsigned short amountPrimes = 0;
+		unsigned short* primesNumber;
 
-		void FillingSequence();
+		void CreateSequence();
 		void ZeroSorting();
 };

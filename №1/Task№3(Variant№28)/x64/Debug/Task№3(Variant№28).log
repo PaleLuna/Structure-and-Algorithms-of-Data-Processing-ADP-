@@ -1,3 +1,3 @@
 ﻿  VectorPrimeSequence.cpp
-C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№3(Variant№28)\VectorPrimeSequence.cpp(55,38): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  Task№3(Variant№28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№3(Variant№28).exe
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№3(Variant№28)\VectorPrimeSequence.cpp(54,38): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Task№3(Variant№28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№1\Task№1 (Variant№28)\x64\Debug\Task№3(Variant№28).exe
