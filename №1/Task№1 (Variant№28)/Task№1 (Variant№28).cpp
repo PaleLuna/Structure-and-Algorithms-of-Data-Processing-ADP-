@@ -14,23 +14,23 @@ unsigned short sequenceLen;
 unsigned short maxNum;
 
 void ShowMenu();
-void UserInteraction(unsigned short choise);
+void UserInteraction(unsigned short choice);
 void FillingArr();
 
 int main()
 {
 	system("chcp 1251>nul");
 
-	unsigned short choise;
+	unsigned short choice;
 
 	ShowMenu();
 
 	while (isRun)
 	{
 		printf("Ваш выбор: ");
-		if (UserInput(choise))
+		if (UserInput(choice))
 		{
-			UserInteraction(choise);
+			UserInteraction(choice);
 			continue;
 		}
 		printf("Ошибка! Введены некорректные данные, повторите попытку!\n");

@@ -1,0 +1,9 @@
+﻿  StaticMatrix.cpp
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(15,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(18,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(35,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(37,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(39,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(46,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(47,21): warning C4018: <: несоответствие типов со знаком и без знака
+  Task№1(variant №28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\x64\Debug\Task№1(variant №28).exe
