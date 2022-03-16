@@ -10,7 +10,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Прочие файлы",
       "ColorIndex": -1
+    },
+    "77364299-1b83-42f3-807b-57a871b63587": {
+      "ProjectGuid": "77364299-1b83-42f3-807b-57a871b63587",
+      "DisplayName": "Task№2(variant №28)",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

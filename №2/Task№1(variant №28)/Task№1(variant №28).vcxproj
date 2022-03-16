@@ -139,12 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="StaticMatrix.cpp" />
     <ClCompile Include="Task№1(variant №28).cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="StaticMatrix.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Menu.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

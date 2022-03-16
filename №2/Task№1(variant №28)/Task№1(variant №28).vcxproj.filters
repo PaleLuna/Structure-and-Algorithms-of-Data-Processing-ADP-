@@ -19,6 +19,12 @@
     <Filter Include="Исходные файлы\Классы">
       <UniqueIdentifier>{0c73d9b9-883b-4b55-9cc3-240e82a53840}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Модули">
+      <UniqueIdentifier>{76a20642-73e6-4c62-addb-a2a248030a90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Модули">
+      <UniqueIdentifier>{397c3797-06a4-48df-9909-1899cdfffc58}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Task№1(variant №28).cpp">
@@ -27,13 +33,24 @@
     <ClCompile Include="StaticMatrix.cpp">
       <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Исходные файлы\Модули</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StaticMatrix.h">
       <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
     <ClInclude Include="Constants.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Модули</Filter>
     </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Файлы заголовков\Модули</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Menu.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
   </ItemGroup>
 </Project>
