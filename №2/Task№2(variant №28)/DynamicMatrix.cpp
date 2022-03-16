@@ -2,17 +2,18 @@
 
 void DynamicMatrix::SetUp(unsigned userOrder, unsigned userMaxNum)
 {
-	if (orderMatrix != 0){ ClearMatrix(); }
+	if (orderMatrix != 0){ ClearMatrix(); } //Если матрица не пуста - очистить её
+	
+	//Инициализация
 	orderMatrix = userOrder;
 	maxNum = userMaxNum;
-
 	dynamicMatrix = new unsigned* [orderMatrix];
 
 	Filling();
 }
 void DynamicMatrix::SetUp(unsigned userOrder)
 {
-	if (orderMatrix != 0) { ClearMatrix(); }
+	if (orderMatrix != 0) { ClearMatrix(); } //Если матрица не пуста - очистить её
 
 	orderMatrix = userOrder;
 	dynamicMatrix = new unsigned*[orderMatrix];
@@ -20,17 +21,16 @@ void DynamicMatrix::SetUp(unsigned userOrder)
 
 bool DynamicMatrix::TryShow()
 {
-	if (!orderMatrix) { return false; }
-	printf("\n\n\n");
+	if (!orderMatrix) { return false; } //Если матрица пуста - вернуть false
+	printf("\n\n");
 
 	for (int i = 0; i < orderMatrix; i++)
 	{
 		printf("|");
-		for (int j = 0; j < orderMatrix; j++)
-			printf("%-4i", dynamicMatrix[i][j]);
-		printf("|\n");
+		for (int j = 0; j < orderMatrix - 1; j++) { printf("%-4i", dynamicMatrix[i][j]); }
+		printf("%2i|\n", dynamicMatrix[i][orderMatrix - 1]);
 	}
-	printf("\n\n\n");
+	printf("\n\n");
 	return true;
 }
 bool DynamicMatrix::TryTranspose()
@@ -48,14 +48,12 @@ void DynamicMatrix::Filling()
 	for (int i = 0; i < orderMatrix; i++)
 	{
 		dynamicMatrix[i] = new unsigned[orderMatrix];
-
-		for (int j = 0; j < orderMatrix; j++)
-			dynamicMatrix[i][j] = rand() % maxNum + 1;
+		for (int j = 0; j < orderMatrix; j++) { dynamicMatrix[i][j] = rand() % maxNum + 1; }
 	}
 }
 void DynamicMatrix::Add(unsigned row, unsigned col, unsigned num)
 {
-	//
+	//Доработать!!!!!!
 }
 
 void DynamicMatrix::Transpose()

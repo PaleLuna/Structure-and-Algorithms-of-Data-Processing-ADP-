@@ -42,10 +42,15 @@ void UserInteraction(unsigned short choice)
 
 	case 3:
 		if (dynamicMatrix.TryShow()) { break; }
-		printf("Матрица не иниализирована!\n");
+		printf("Матрица не инициализирована!\n");
 		break;
 
 	case 4:
+		if (dynamicMatrix.TryTranspose()) { break; }
+		printf("Матрица не инициализирована!\n");
+		break;
+
+	case 5:
 		system("cls");
 		ShowMenu();
 		break;
