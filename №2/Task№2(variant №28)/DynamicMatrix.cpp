@@ -11,13 +11,6 @@ void DynamicMatrix::SetUp(unsigned userOrder, unsigned userMaxNum)
 
 	Filling();
 }
-void DynamicMatrix::SetUp(unsigned userOrder)
-{
-	if (orderMatrix != 0) { ClearMatrix(); } //Если матрица не пуста - очистить её
-
-	orderMatrix = userOrder;
-	dynamicMatrix = new unsigned*[orderMatrix];
-}
 
 bool DynamicMatrix::TryShow()
 {
@@ -50,10 +43,6 @@ void DynamicMatrix::Filling()
 		dynamicMatrix[i] = new unsigned[orderMatrix];
 		for (int j = 0; j < orderMatrix; j++) { dynamicMatrix[i][j] = rand() % maxNum + 1; }
 	}
-}
-void DynamicMatrix::Add(unsigned row, unsigned col, unsigned num)
-{
-	//Доработать!!!!!!
 }
 
 void DynamicMatrix::Transpose()

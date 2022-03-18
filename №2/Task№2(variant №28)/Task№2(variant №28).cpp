@@ -35,22 +35,16 @@ void UserInteraction(unsigned short choice)
 		if (ParameterInput(order, maxNum)) { dynamicMatrix.SetUp(order, maxNum); break; }
 
 	case 2:
-		printf("Введите порядок матрицы: ");
-		if (!Input(order)) { printf("Некорректные данные!\n"); break; }
-		FillingArr(order);
-		break;
-
-	case 3:
 		if (dynamicMatrix.TryShow()) { break; }
 		printf("Матрица не инициализирована!\n");
 		break;
 
-	case 4:
+	case 3:
 		if (dynamicMatrix.TryTranspose()) { break; }
 		printf("Матрица не инициализирована!\n");
 		break;
 
-	case 5:
+	case 4:
 		system("cls");
 		ShowMenu();
 		break;
@@ -85,21 +79,5 @@ void ShowMenu()
 		char text[1024];
 		menuText.getline(text, 1024, '\0');
 		printf("%s", text);
-	}
-}
-
-void FillingArr(unsigned order)
-{
-	for (int i = 0; i < order; i++)
-	{
-		for (int j = 0; j < order; j++)
-		{
-			unsigned num;
-			printf("matrix[%i][%i] = ", i + 1, j + 1);
-			if (!Input(num)) { printf("Некорректные данные!\n"), --j; continue; }
-			if (num > 0) { dynamicMatrix.Add(i, j, num); continue; }
-			i = order;
-			break;
-		}
 	}
 }

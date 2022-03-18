@@ -1,10 +1,13 @@
 ﻿  DynamicMatrix.cpp
-C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(27,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(30,21): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(46,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(48,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(51,21): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(61,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(62,21): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(68,20): warning C4018: <: несоответствие типов со знаком и без знака
-  Task№2(variant №28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\x64\Debug\Task№2(variant №28).exe
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(20,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(23,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(39,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(41,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(44,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(50,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(51,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№2(variant №28)\DynamicMatrix.cpp(57,20): warning C4018: <: несоответствие типов со знаком и без знака
+  Input.cpp
+  Task№2(variant №28).cpp
+  Создание кода...
+  Task№2(variant №28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\x64\Debug\Task№2(variant №28).exe

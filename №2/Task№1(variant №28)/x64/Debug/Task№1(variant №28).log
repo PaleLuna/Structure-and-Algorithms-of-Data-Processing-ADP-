@@ -1,4 +1,5 @@
-﻿  StaticMatrix.cpp
+﻿  Input.cpp
+  StaticMatrix.cpp
 D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(20,20): warning C4018: <: несоответствие типов со знаком и без знака
 D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(23,21): warning C4018: <: несоответствие типов со знаком и без знака
 D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(40,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
