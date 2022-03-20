@@ -19,6 +19,7 @@ class DynamicMatrix
 		unsigned** dynamicMatrix;
 
 		void Filling();
+		void ZeroFilling();
 		void Transpose();
 
 		void ClearMatrix();

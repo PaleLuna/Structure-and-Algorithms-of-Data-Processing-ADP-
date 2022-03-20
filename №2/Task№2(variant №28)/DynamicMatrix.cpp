@@ -11,6 +11,13 @@ void DynamicMatrix::SetUp(unsigned userOrder, unsigned userMaxNum)
 
 	Filling();
 }
+void DynamicMatrix::SetUp(unsigned userOrder)
+{
+	if (orderMatrix != 0) { ClearMatrix(); }
+	orderMatrix = userOrder;
+	dynamicMatrix = new unsigned* [orderMatrix];
+	ZeroFilling();
+}
 
 bool DynamicMatrix::TryShow()
 {
@@ -43,6 +50,18 @@ void DynamicMatrix::Filling()
 		dynamicMatrix[i] = new unsigned[orderMatrix];
 		for (int j = 0; j < orderMatrix; j++) { dynamicMatrix[i][j] = rand() % maxNum + 1; }
 	}
+}
+void DynamicMatrix::ZeroFilling()
+{
+	for (int i = 0; i < orderMatrix; i++)
+	{
+		dynamicMatrix[i] = new unsigned[orderMatrix];
+		for (int j = 0; j < orderMatrix; j++) { dynamicMatrix[i][j] = 0; }
+	}
+}
+void DynamicMatrix::Add(unsigned row, unsigned col, unsigned num)
+{
+	dynamicMatrix[row][col] = num;
 }
 
 void DynamicMatrix::Transpose()

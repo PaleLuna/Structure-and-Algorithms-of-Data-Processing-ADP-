@@ -19,6 +19,14 @@ bool ParameterInput(unsigned int& order, unsigned int& maxNum)
 
 	return true;
 }
+bool ParameterInput(unsigned int& order)
+{
+	printf("Введите порядок матрицы: ");
+	if (!Input(order)) { printf("Некорректные данные!\n"); return false; }
+
+	return true;
+}
+
 void UserInteraction(unsigned short choice)
 {
 	unsigned order;
@@ -35,16 +43,24 @@ void UserInteraction(unsigned short choice)
 		if (ParameterInput(order, maxNum)) { dynamicMatrix.SetUp(order, maxNum); break; }
 
 	case 2:
+		if (ParameterInput(order))
+		{
+			dynamicMatrix.SetUp(order);
+			FillingArr(order);
+		}
+		break;
+
+	case 3:
 		if (dynamicMatrix.TryShow()) { break; }
 		printf("Матрица не инициализирована!\n");
 		break;
 
-	case 3:
+	case 4:
 		if (dynamicMatrix.TryTranspose()) { break; }
 		printf("Матрица не инициализирована!\n");
 		break;
 
-	case 4:
+	case 5:
 		system("cls");
 		ShowMenu();
 		break;
@@ -79,5 +95,22 @@ void ShowMenu()
 		char text[1024];
 		menuText.getline(text, 1024, '\0');
 		printf("%s", text);
+	}
+}
+
+void FillingArr(unsigned order)
+{
+	for (int i = 0; i < order; i++)
+	{
+		unsigned num;
+
+		for (int j = 0; j < order; j++)
+		{
+			printf("matrix[%i][%i] = ", i + 1, j + 1);
+			if (!Input(num)) { printf("Некорректные данные!\n"); j--; continue; }
+			if (num > 0) { dynamicMatrix.Add(i, j, num); continue; }
+			i = order;
+			break;
+		}
 	}
 }
