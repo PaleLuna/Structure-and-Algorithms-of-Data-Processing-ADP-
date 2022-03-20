@@ -1,8 +1,8 @@
 ﻿#include <fstream>
 #include "Input.h"
-#include "VectorMatrix.h"
+#include "SetOfPoints.h"
 
-VectorMatrix vectorMatrix;
+SetOfPoints setOfPoints;
 
 bool isRun = true;
 
@@ -28,19 +28,19 @@ void UserInteraction(unsigned short choice)
 	case 1:
 		if (ParameterInput(inputAmountPoints)) 
 		{
-			vectorMatrix.SetUp(inputAmountPoints);
+			setOfPoints.SetUp(inputAmountPoints);
 			FillingArr(inputAmountPoints);
 		}
 		else printf("Некорректные данные.\n");
 		break;
 
 	case 2:
-		if (vectorMatrix.TryShow()) { break; }
+		if (setOfPoints.TryShow()) { break; }
 		printf("Ошибка! Точки не заданы.\n");
 		break;
 
 	case 3:
-		printf("Горизонтальная медиана x = %0.2f\n", vectorMatrix.GetMedian());
+		printf("Горизонтальная медиана x = %0.2f\n", setOfPoints.GetMedian());
 		break;
 
 	case 4:
@@ -84,18 +84,18 @@ void ShowMenu()
 void FillingArr(unsigned amountPoints)
 {
 	vector<unsigned> coord;
-	coord.resize(vectorMatrix.GetAmountCoords());
+	coord.resize(setOfPoints.GetAmountCoords());
 
 	for (int i = 0; i < amountPoints; i++)
 	{
 		printf("Введите координаты точки №%i: ", i + 1);
-		for (int j = 0; j < vectorMatrix.GetAmountCoords(); j++)
+		for (int j = 0; j < setOfPoints.GetAmountCoords(); j++)
 		{
 			if (Input(coord.at(j))) { continue; }
 			j--;
 		}
 
-		if(!vectorMatrix.TryAddPoint(coord))
+		if(!setOfPoints.TryAddPoint(coord))
 		{
 			printf("Точки не должны лежать на одной прямой!\n");
 			i--;

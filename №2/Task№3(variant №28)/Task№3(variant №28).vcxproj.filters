@@ -33,7 +33,7 @@
     <ClCompile Include="Input.cpp">
       <Filter>Исходные файлы\Модули</Filter>
     </ClCompile>
-    <ClCompile Include="VectorMatrix.cpp">
+    <ClCompile Include="SetOfPoints.cpp">
       <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClInclude Include="Input.h">
       <Filter>Файлы заголовков\Модули</Filter>
     </ClInclude>
-    <ClInclude Include="VectorMatrix.h">
+    <ClInclude Include="SetOfPoints.h">
       <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
   </ItemGroup>

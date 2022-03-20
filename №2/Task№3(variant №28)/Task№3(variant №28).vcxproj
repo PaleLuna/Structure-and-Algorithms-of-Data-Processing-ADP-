@@ -141,10 +141,10 @@
   <ItemGroup>
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Task№3(variant №28).cpp" />
-    <ClCompile Include="VectorMatrix.cpp" />
+    <ClCompile Include="SetOfPoints.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="VectorMatrix.h" />
+    <ClInclude Include="SetOfPoints.h" />
     <ClInclude Include="Input.h" />
   </ItemGroup>
   <ItemGroup>
