@@ -10,9 +10,9 @@ bool isRun = true;
 void ShowMenu();
 void FillingArr(unsigned order);
 
-bool ParameterInput(unsigned int& order, unsigned int& maxNum)
+bool ParameterInput(unsigned& order, unsigned& maxNum)
 {
-	printf("Введите порядок матрицы: ");
+	printf("Введите порядок матрицы (не больше 20!): ");
 	if (!Input(order, 0, MAX_ORDER)) { printf("Некорректные данные!\n"); return false; }
 
 	printf("Введите максимальное значение элементов: ");
@@ -34,10 +34,12 @@ void UserInteraction(unsigned short choice)
 
 		case 1:
 			if (ParameterInput(order, maxNum)) { staticMatrix.SetUp(order, maxNum); break; }
+			break;
 
 		case 2:
-			printf("Введите порядок матрицы: ");
+			printf("Введите порядок матрицы (не больше 20!): ");
 			if (!Input(order, 0, MAX_ORDER)) { printf("Некорректные данные!\n"); break; }
+			staticMatrix.SetUp(order);
 			FillingArr(order);
 			break;
 

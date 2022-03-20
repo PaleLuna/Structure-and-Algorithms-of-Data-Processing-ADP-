@@ -1,14 +1,4 @@
-﻿  Input.cpp
-  StaticMatrix.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(20,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(23,21): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(40,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(42,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(44,21): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(57,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\StaticMatrix.cpp(58,21): warning C4018: <: несоответствие типов со знаком и без знака
-  Task№1(variant №28).cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\Task№1(variant №28).cpp(89,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\Task№1(variant №28).cpp(91,21): warning C4018: <: несоответствие типов со знаком и без знака
-  Создание кода...
+﻿  Task№1(variant №28).cpp
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\Task№1(variant №28).cpp(91,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№1(variant №28)\Task№1(variant №28).cpp(93,21): warning C4018: <: несоответствие типов со знаком и без знака
   Task№1(variant №28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\x64\Debug\Task№1(variant №28).exe

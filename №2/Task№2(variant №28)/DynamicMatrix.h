@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #pragma once
 class DynamicMatrix
 {
@@ -18,7 +18,7 @@ class DynamicMatrix
 		unsigned orderMatrix = 0;
 		unsigned** dynamicMatrix;
 
-		void Filling();
+		void GeneratingElements();
 		void ZeroFilling();
 		void Transpose();
 

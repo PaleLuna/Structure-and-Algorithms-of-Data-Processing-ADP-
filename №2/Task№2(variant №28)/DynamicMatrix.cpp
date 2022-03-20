@@ -9,7 +9,7 @@ void DynamicMatrix::SetUp(unsigned userOrder, unsigned userMaxNum)
 	maxNum = userMaxNum;
 	dynamicMatrix = new unsigned* [orderMatrix];
 
-	Filling();
+	GeneratingElements();
 }
 void DynamicMatrix::SetUp(unsigned userOrder)
 {
@@ -41,7 +41,7 @@ bool DynamicMatrix::TryTranspose()
 	return true;
 }
 
-void DynamicMatrix::Filling()
+void DynamicMatrix::GeneratingElements()
 {
 	srand(time(NULL));
 
