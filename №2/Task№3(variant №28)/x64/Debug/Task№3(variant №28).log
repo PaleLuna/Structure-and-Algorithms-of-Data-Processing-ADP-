@@ -1,13 +1,1 @@
-﻿  SetOfPoints.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№3(variant №28)\SetOfPoints.cpp(13,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№3(variant №28)\SetOfPoints.cpp(36,27): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№3(variant №28)\SetOfPoints.cpp(41,30): warning C4267: инициализация: преобразование из "size_t" в "unsigned int"; возможна потеря данных
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№3(variant №28)\SetOfPoints.cpp(42,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№3(variant №28)\SetOfPoints.cpp(44,21): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№3(variant №28)\SetOfPoints.cpp(61,26): warning C4244: =: преобразование "_Ty" в "float", возможна потеря данных
-          with
-          [
-              _Ty=unsigned int
-          ]
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\Task№3(variant №28)\SetOfPoints.cpp(66,24): warning C4018: <: несоответствие типов со знаком и без знака
-  Task№3(variant №28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\x64\Debug\Task№3(variant №28).exe
+﻿  Task№3(variant №28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№2\x64\Debug\Task№3(variant №28).exe
