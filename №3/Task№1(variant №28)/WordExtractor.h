@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 #pragma once
 
 using namespace std;
@@ -14,7 +15,10 @@ class WordExtractor
 
 	private:
 		vector<string> words;
+		string sourceText;
+		vector<char> separators = { '\t','\n','!',',', '.',':', ';', '?'};
 
-		void Extractor(string inputText);
+		void Extractor();
+		string GetWord(unsigned start, unsigned end);
 };
 

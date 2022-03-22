@@ -1,8 +1,16 @@
 #include "WordExtractor.h"
 
+vector<string> WordExtractor::GetText()
+{
+	return words;
+}
+
 void WordExtractor::SetUp(string inputText)
 {
-	Extractor(inputText);
+	sourceText = inputText;
+	words.clear();
+	words.reserve(1000);
+	Extractor();
 }
 bool WordExtractor::TryShowText()
 {
@@ -10,24 +18,32 @@ bool WordExtractor::TryShowText()
 
 	for (int i = 0; i < words.size(); i++)
 	{
-		printf("%s ", words.at(i).c_str());
+		printf("Word[%i]: %s\n", i+1, words.at(i).c_str());
 	}
 }
 
-vector<string> WordExtractor::GetText()
+void WordExtractor::Extractor()
 {
-	return words;
-}
-
-void WordExtractor::Extractor(string inputText)
-{
-	for (int i = 0; i < inputText.size(); i++)
+	for (int i = 0; i < sourceText.size(); i++)
 	{
-		if (inputText.at(i) != ' ')
+		if (sourceText.at(i) != ' ')
 		{
-			int j = inputText.find(' ');
+			int j = sourceText.find(' ', i);
+			if(j < 0){j = sourceText.size();}
+			words.push_back(GetWord(i, j));
+			i = j;
 		}
-		continue;
 	}
+	words.reserve(words.size());
 }
+string WordExtractor::GetWord(unsigned start, unsigned end)
+{
+	string word;
+	word.reserve(end - start);
 
+	for (int i = start; i < end; i++)
+		if(!binary_search(separators.begin(), separators.end(), sourceText.at(i))) 
+			word.push_back(sourceText.at(i));
+
+	return word;
+}

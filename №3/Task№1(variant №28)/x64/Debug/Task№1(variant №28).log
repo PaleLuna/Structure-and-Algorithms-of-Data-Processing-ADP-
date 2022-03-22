@@ -1,2 +1,6 @@
-﻿  Task№1(variant №28).cpp
-  Task№1(variant №28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\x64\Debug\Task№1(variant №28).exe
+﻿  WordExtractor.cpp
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№1(variant №28)\WordExtractor.cpp(31,35): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№1(variant №28)\WordExtractor.cpp(32,35): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№1(variant №28)\WordExtractor.cpp(44,24): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№1(variant №28)\WordExtractor.cpp(23): warning C4715: WordExtractor::TryShowText: значение возвращается не при всех путях выполнения
+  Task№1(variant №28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\x64\Debug\Task№1(variant №28).exe

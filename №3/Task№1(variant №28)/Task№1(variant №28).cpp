@@ -1,5 +1,6 @@
 ﻿#include <fstream>
 #include <string>
+#include "WordExtractor.h"
 #include "UserInput.h"
 
 using namespace std;
@@ -8,6 +9,8 @@ bool isRun = true;
 
 void ReadFile(string& text);
 void ShowMenu();
+
+WordExtractor wordExtractor;
 
 void UserInteracrion(unsigned choice)
 {
@@ -23,6 +26,12 @@ void UserInteracrion(unsigned choice)
 			printf("\nСчитываем...\n");
 			ReadFile(text);
 			printf("Готово!\n\n");
+			wordExtractor.SetUp(text);
+			break;
+
+		case 2:
+			if (wordExtractor.TryShowText()) { break; }
+			printf("Файл пуст или не считан!\n");
 			break;
 
 		default:
