@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Anagrams.cpp" />
     <ClCompile Include="Task№1(variant №28).cpp" />
     <ClCompile Include="UserInput.cpp" />
     <ClCompile Include="WordExtractor.cpp" />
@@ -148,6 +149,7 @@
     <Text Include="Input.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Anagrams.h" />
     <ClInclude Include="UserInput.h" />
     <ClInclude Include="WordExtractor.h" />
   </ItemGroup>

@@ -20,5 +20,6 @@ class WordExtractor
 
 		void Extractor();
 		string GetWord(unsigned start, unsigned end);
+		bool IsListed(string searchable);
 };
 
