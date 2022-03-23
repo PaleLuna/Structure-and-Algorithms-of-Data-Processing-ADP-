@@ -1,0 +1,9 @@
+﻿  WordExtractor.cpp
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\WordExtractor.cpp(30,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\WordExtractor.cpp(66,24): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\WordExtractor.cpp(75,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\WordExtractor.cpp(90,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\WordExtractor.cpp(98,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\WordExtractor.cpp(102,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\WordExtractor.cpp(6): warning C4715: WordExtractor::GetWords: значение возвращается не при всех путях выполнения
+  Task№2(variant №28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\x64\Debug\Task№2(variant №28).exe
