@@ -1,4 +1,5 @@
 #include <iostream>
+#pragma warning(disable : 4996)
 #pragma once
 
 using namespace std;
@@ -7,8 +8,8 @@ class WordExtractor
 {
 	public:
 		void SetUp(char* source);
-		bool TryShow();
 		char** GetWords();
+		unsigned GetSize();
 
 		~WordExtractor();
 
@@ -17,7 +18,6 @@ class WordExtractor
 		unsigned amountWords;
 		char** words;
 
-		void Show();
 		unsigned GetLen(unsigned start, char* text);
 
 		void Extractor();

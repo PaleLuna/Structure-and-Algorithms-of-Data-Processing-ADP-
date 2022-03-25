@@ -4,6 +4,10 @@ char** WordExtractor::GetWords()
 {
 	if (amountWords > 0) { return words; }
 }
+unsigned WordExtractor::GetSize()
+{
+	return amountWords;
+}
 
 void WordExtractor::SetUp(char* source)
 {
@@ -12,26 +16,6 @@ void WordExtractor::SetUp(char* source)
 	words = new char*[512];
 
 	Extractor();
-}
-bool WordExtractor::TryShow()
-{
-	bool flag;
-	if (amountWords > 0)
-	{
-		flag = true;
-		Show();
-	}
-	else flag = false;
-
-	return flag;
-}
-void WordExtractor::Show()
-{
-	for (int i = 0; i < amountWords; i++)
-	{
-		printf("Word[%i]: %s\n", i + 1, words[i]);
-	}
-	printf("\n");
 }
 
 void WordExtractor::Extractor()
@@ -47,7 +31,6 @@ void WordExtractor::Extractor()
 			i = j;
 		}
 	}
-	amountWords--;
 	Resize();
 }
 unsigned WordExtractor::GetLen(unsigned start, char* text)
@@ -71,16 +54,15 @@ char* WordExtractor::GetWord(unsigned start, unsigned end)
 }
 bool WordExtractor::IsListed(char* searchable)
 {
-	bool flag = false;
-	for (int i = 0; i < amountWords; i++)
-	{
-		if (words[i] == searchable)
+	bool isListed = false;
+	for(int i = 0; i < amountWords; i++)
+		if (strcmp(searchable, words[i]) == 0)
 		{
-			flag = true;
+			isListed = true;
 			break;
 		}
-	}
-	return flag;
+
+	return isListed;
 }
 
 void WordExtractor::Clear()
@@ -97,11 +79,9 @@ void WordExtractor::Resize()
 	char** temp = new char* [amountWords];
 	for (int i = 0; i < amountWords; i++)
 	{
-		unsigned len = GetLen(0, words[i]);
-		temp[i] = new char [len++];
-		for(int j = 0; j < len - 1; j++)
-			temp[i][j] = words[i][j];
-		temp[i][len - 1] = '\0';
+		unsigned len = strlen(words[i]) + 1;
+		temp[i] = new char [len];
+		strcpy(temp[i], words[i]);
 	}
 
 	Clear();
@@ -110,5 +90,5 @@ void WordExtractor::Resize()
 
 WordExtractor::~WordExtractor()
 {
-	Clear();
+	//Clear();
 }

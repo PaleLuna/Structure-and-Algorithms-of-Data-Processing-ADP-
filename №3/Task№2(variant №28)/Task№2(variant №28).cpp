@@ -1,6 +1,6 @@
 ﻿#include <fstream>
 #include "WordExtractor.h"
-//#include "Anagrams.h"
+#include "Anagrams.h"
 #include "UserInput.h"
 
 using namespace std;
@@ -11,7 +11,7 @@ char* ReadFile();
 void ShowMenu();
 
 WordExtractor wordExtractor;
-//Anagrams anagrams;
+Anagrams anagrams;
 
 
 void UserInteracrion(unsigned choice)
@@ -30,16 +30,11 @@ void UserInteracrion(unsigned choice)
 		printf("Готово!\n\n");
 
 		wordExtractor.SetUp(text);
-		//anagrams.SetUp(wordExtractor.GetText());
+		anagrams.SetUp(wordExtractor.GetWords(), wordExtractor.GetSize());
 		break;
 
 	case 2:
-		if (wordExtractor.TryShow()) { break; }
-		printf("Файл пуст или не считан!\n");
-		break;
-
-	case 3:
-		//if (anagrams.TryShow()) { break; }
+		if (anagrams.TryShow()) { break; }
 		printf("Ошибка!\n");
 		break;
 

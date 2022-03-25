@@ -36,12 +36,18 @@
     <ClCompile Include="WordExtractor.cpp">
       <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
+    <ClCompile Include="Anagrams.cpp">
+      <Filter>Исходные файлы\Классы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UserInput.h">
       <Filter>Файлы заголовков\Модули</Filter>
     </ClInclude>
     <ClInclude Include="WordExtractor.h">
+      <Filter>Файлы заголовков\Классы</Filter>
+    </ClInclude>
+    <ClInclude Include="Anagrams.h">
       <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
   </ItemGroup>

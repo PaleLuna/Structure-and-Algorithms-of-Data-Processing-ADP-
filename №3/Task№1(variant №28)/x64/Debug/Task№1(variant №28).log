@@ -2,4 +2,12 @@
 D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№1(variant №28)\Anagrams.cpp(46,46): warning C4267: инициализация: преобразование из "size_t" в "unsigned int"; возможна потеря данных
 D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№1(variant №28)\Anagrams.cpp(48,21): warning C4018: <: несоответствие типов со знаком и без знака
 D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№1(variant №28)\Anagrams.cpp(67,6): warning C4267: аргумент: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+  Task№1(variant №28).cpp
+  UserInput.cpp
+  WordExtractor.cpp
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№1(variant №28)\WordExtractor.cpp(32,35): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№1(variant №28)\WordExtractor.cpp(33,35): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№1(variant №28)\WordExtractor.cpp(47,24): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№1(variant №28)\WordExtractor.cpp(24): warning C4715: WordExtractor::TryShowText: значение возвращается не при всех путях выполнения
   Task№1(variant №28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\x64\Debug\Task№1(variant №28).exe

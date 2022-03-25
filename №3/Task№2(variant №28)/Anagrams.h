@@ -1,0 +1,31 @@
+#include <iostream>
+#pragma warning(disable : 4996)
+#pragma once
+class Anagrams
+{
+	public:
+		void SetUp(char** original, unsigned size);
+		bool TryShow();
+
+		~Anagrams();
+	private:
+		char** source;
+		unsigned amountWords = 0;
+
+		unsigned amountPairs = 0;
+		char*** anagramsPair;
+
+		void Show();
+		void ShoWw();
+		void InsertionSort();
+
+		char* Reverse(char* string);
+		void CrossOut(char* string);
+
+		void WrittingWordPairs();
+		bool AnagramsSearch(char* searchable, unsigned start, unsigned end);
+
+		void Clear();
+		void Resize();
+		char** Copy(char** original);
+};
