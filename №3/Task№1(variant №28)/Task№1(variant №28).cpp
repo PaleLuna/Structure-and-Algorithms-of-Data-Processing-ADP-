@@ -14,7 +14,6 @@ void ShowMenu();
 WordExtractor wordExtractor;
 Anagrams anagrams;
 
-
 void UserInteracrion(unsigned choice)
 {
 	string text;
@@ -42,6 +41,11 @@ void UserInteracrion(unsigned choice)
 		case 3:
 			if (anagrams.TryShow()) { break; }
 			printf("Ошибка!\n");
+			break;
+
+		case 4:
+			system("cls");
+			ShowMenu();
 			break;
 
 		default:
@@ -90,4 +94,3 @@ void ShowMenu()
 	}
 	textFile.close();
 }
-

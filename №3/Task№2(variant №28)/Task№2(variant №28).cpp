@@ -34,8 +34,18 @@ void UserInteracrion(unsigned choice)
 		break;
 
 	case 2:
+		if (wordExtractor.TryShow()) { break; }
+		printf("Ошибка!\n");
+		break;
+
+	case 3:
 		if (anagrams.TryShow()) { break; }
 		printf("Ошибка!\n");
+		break;
+
+	case 4:
+		system("cls");
+		ShowMenu();
 		break;
 
 	default:

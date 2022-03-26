@@ -1,12 +1,2 @@
-﻿  Anagrams.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\Anagrams.cpp(28,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\Anagrams.cpp(37,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\Anagrams.cpp(47,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\Anagrams.cpp(64,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\Anagrams.cpp(84,31): warning C4267: инициализация: преобразование из "size_t" в "unsigned int"; возможна потеря данных
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\Anagrams.cpp(117,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\Anagrams.cpp(128,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\Anagrams.cpp(140,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\Anagrams.cpp(142,41): warning C4267: инициализация: преобразование из "size_t" в "unsigned int"; возможна потеря данных
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\Task№2(variant №28)\Anagrams.cpp(145,21): warning C4018: <: несоответствие типов со знаком и без знака
-  Task№2(variant №28).vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\x64\Debug\Task№2(variant №28).exe
+﻿  Task№2(variant №28).cpp
+  Task№2(variant №28).vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№3\x64\Debug\Task№2(variant №28).exe

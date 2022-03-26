@@ -3,10 +3,11 @@
 void Anagrams::SetUp(char** original, unsigned size)
 {
 	amountPairs = 0;
-	Clear();
+	ClearAnagrams();
+	ClearSource();
 
 	amountWords = size;
-	source = Copy(original);
+	source = StrCopy(original, amountWords);
 
 	anagramsPair = new char** [size];
 
@@ -32,18 +33,9 @@ void Anagrams::Show()
 		printf("%s;\n", anagramsPair[i][1]);
 	}
 }
-void Anagrams::ShoWw()
-{
-	for (int i = 0; i < amountWords; i++)
-	{
-		printf("%s\n", source[i]);
-	}
-}
-
 
 void Anagrams::InsertionSort()
 {
-	ShoWw();
 	for (int i = 1; i < amountWords; i++)
 	{
 		char* tempStr = source[i];
@@ -56,7 +48,6 @@ void Anagrams::InsertionSort()
 		}
 		source[j + 1] = tempStr;
 	}
-	
 }
 
 void Anagrams::WrittingWordPairs()
@@ -67,8 +58,7 @@ void Anagrams::WrittingWordPairs()
 
 		char** temp;
 		temp = new char* [2];
-		temp[0] = new char[strlen(source[i])];
-		strcpy(temp[0], source[i]);
+		temp[0] = StrCopy(source[i]);
 
 		char* reversed = Reverse(temp[0]);
 
@@ -82,8 +72,8 @@ void Anagrams::WrittingWordPairs()
 char* Anagrams::Reverse(char* string)
 {
 	unsigned len = strlen(string);
-	char* temp = new char(len);
-	strcpy(temp, string);
+	char* temp = StrCopy(string);
+
 	_strrev(temp);
 
 	return temp;
@@ -99,7 +89,6 @@ bool Anagrams::AnagramsSearch(char* searchable, unsigned start, unsigned end)
 		else
 		{
 			CrossOut(source[mid]);
-			InsertionSort();
 			return true;
 		}
 
@@ -112,7 +101,7 @@ void Anagrams::CrossOut(char* string)
 	string[1] = '\0';
 }
 
-void Anagrams::Clear()
+void Anagrams::ClearAnagrams()
 {
 	for (int i = 0; i < amountPairs; i++)
 	{
@@ -122,6 +111,12 @@ void Anagrams::Clear()
 	}
 	delete[] anagramsPair;
 }
+void Anagrams::ClearSource()
+{
+	for (int i = 0; i < amountWords; i++)
+		delete[] source[i];
+	delete[] source;
+}
 void Anagrams::Resize()
 {
 	char*** temp = new char** [amountPairs];
@@ -129,27 +124,14 @@ void Anagrams::Resize()
 	{
 		temp[i] = new char* [2];
 		for (int j = 0; j < 2; j++)
-			strcpy(temp[i][j], anagramsPair[i][j]);
+			temp[i] = StrCopy(anagramsPair[i], 2);
 	}
-	Clear();
+	ClearAnagrams();
 	anagramsPair = temp;
-}
-char** Anagrams::Copy(char** original)
-{
-	char** temp = new char* [amountWords];
-	for (int i = 0; i < amountWords; i++)
-	{
-		unsigned len = strlen(original[i]) + 1;
-		temp[i] = new char[len];
-
-		for (int j = 0; j < len - 1; j++)
-			temp[i][j] = original[i][j];
-		temp[i][len - 1] = '\0';
-	}
-	return temp;
 }
 
 Anagrams::~Anagrams()
 {
-	Clear();
+	ClearAnagrams();
+	ClearSource();
 }

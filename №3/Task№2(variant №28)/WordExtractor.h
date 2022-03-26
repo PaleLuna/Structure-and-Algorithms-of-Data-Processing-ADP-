@@ -1,5 +1,5 @@
 #include <iostream>
-#pragma warning(disable : 4996)
+#include "StrCopy.h"
 #pragma once
 
 using namespace std;
@@ -10,6 +10,7 @@ class WordExtractor
 		void SetUp(char* source);
 		char** GetWords();
 		unsigned GetSize();
+		bool TryShow();
 
 		~WordExtractor();
 
@@ -19,6 +20,7 @@ class WordExtractor
 		char** words;
 
 		unsigned GetLen(unsigned start, char* text);
+		void Show();
 
 		void Extractor();
 		char* GetWord(unsigned start, unsigned end);

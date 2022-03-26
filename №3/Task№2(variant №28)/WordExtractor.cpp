@@ -17,6 +17,19 @@ void WordExtractor::SetUp(char* source)
 
 	Extractor();
 }
+bool WordExtractor::TryShow()
+{
+	bool istEmpty = amountWords > 0;
+	if (istEmpty)
+		Show();
+	return istEmpty;
+}
+
+void WordExtractor::Show()
+{
+	for (int i = 0; i < amountWords; i++)
+		printf("Word[%i]: %s\n", i + 1, words[i]);
+}
 
 void WordExtractor::Extractor()
 {
@@ -76,13 +89,7 @@ void WordExtractor::Clear()
 }
 void WordExtractor::Resize()
 {
-	char** temp = new char* [amountWords];
-	for (int i = 0; i < amountWords; i++)
-	{
-		unsigned len = strlen(words[i]) + 1;
-		temp[i] = new char [len];
-		strcpy(temp[i], words[i]);
-	}
+	char** temp = StrCopy(words, amountWords);
 
 	Clear();
 	words = temp;
@@ -90,5 +97,5 @@ void WordExtractor::Resize()
 
 WordExtractor::~WordExtractor()
 {
-	//Clear();
+	Clear();
 }

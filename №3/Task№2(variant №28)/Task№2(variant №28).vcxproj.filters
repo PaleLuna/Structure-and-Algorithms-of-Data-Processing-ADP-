@@ -39,6 +39,9 @@
     <ClCompile Include="Anagrams.cpp">
       <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
+    <ClCompile Include="StrCopy.cpp">
+      <Filter>Исходные файлы\Модули</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UserInput.h">
@@ -49,6 +52,9 @@
     </ClInclude>
     <ClInclude Include="Anagrams.h">
       <Filter>Файлы заголовков\Классы</Filter>
+    </ClInclude>
+    <ClInclude Include="StrCopy.h">
+      <Filter>Файлы заголовков\Модули</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

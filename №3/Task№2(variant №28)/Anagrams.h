@@ -1,5 +1,5 @@
 #include <iostream>
-#pragma warning(disable : 4996)
+#include "StrCopy.h"
 #pragma once
 class Anagrams
 {
@@ -16,7 +16,6 @@ class Anagrams
 		char*** anagramsPair;
 
 		void Show();
-		void ShoWw();
 		void InsertionSort();
 
 		char* Reverse(char* string);
@@ -25,7 +24,7 @@ class Anagrams
 		void WrittingWordPairs();
 		bool AnagramsSearch(char* searchable, unsigned start, unsigned end);
 
-		void Clear();
+		void ClearAnagrams();
+		void ClearSource();
 		void Resize();
-		char** Copy(char** original);
 };
