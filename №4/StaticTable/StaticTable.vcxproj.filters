@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\Модули">
+      <UniqueIdentifier>{d541325b-ff93-4fc7-b0bf-18af3779cf24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Классы">
+      <UniqueIdentifier>{3844fac3-b3da-4b77-b3ee-addf077e3cf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Структуры">
+      <UniqueIdentifier>{b53c2a98-9d54-4049-8891-0c9b90516d34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Классы">
+      <UniqueIdentifier>{5a23ce8e-47c0-4822-a535-7b958d6d75f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Модули">
+      <UniqueIdentifier>{f2e88297-5d33-4f1e-bdac-15288ebbaf64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Структуры">
+      <UniqueIdentifier>{670bad38-61dc-4a00-b26a-14179e353b11}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StaticTable.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentTable.cpp">
+      <Filter>Исходные файлы\Классы</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.cpp">
+      <Filter>Исходные файлы\Структуры</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>Файлы заголовков\Структуры</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentTable.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="StaticTable.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
