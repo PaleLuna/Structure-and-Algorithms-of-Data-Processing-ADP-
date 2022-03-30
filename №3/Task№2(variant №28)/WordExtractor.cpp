@@ -9,9 +9,9 @@ unsigned WordExtractor::GetSize()
 	return amountWords;
 }
 
-void WordExtractor::SetUp(char* source)
+void WordExtractor::SetUp(char* original)
 {
-	text = source;
+	source = original;
 	Clear();
 	words = new char*[512];
 
@@ -33,11 +33,11 @@ void WordExtractor::Show()
 
 void WordExtractor::Extractor()
 {
-	for (int i = 0; text[i]; i++)
+	for (int i = 0; source[i]; i++)
 	{
-		if (text[i] != ' ')
+		if (source[i] != ' ')
 		{
-			int j = GetLen(i, text);
+			int j = GetLen(i, source);
 
 			char* word = GetWord(i, j);
 			if (!IsListed(word)) { words[amountWords++] = word; }
@@ -60,7 +60,7 @@ char* WordExtractor::GetWord(unsigned start, unsigned end)
 	char* word = new char[(end - start) + 1];
 
 	for (int i = start; i < end; i++)
-		word[len++] = text[i];
+		word[len++] = source[i];
 	word[len++] = '\0';
 
 	return word;

@@ -13,7 +13,6 @@ void ShowMenu();
 WordExtractor wordExtractor;
 Anagrams anagrams;
 
-
 void UserInteracrion(unsigned choice)
 {
 	char* text;
@@ -34,12 +33,12 @@ void UserInteracrion(unsigned choice)
 		break;
 
 	case 2:
-		if (wordExtractor.TryShow()) { break; }
+		if (wordExtractor.TryShow()) { printf("\n"); break; }
 		printf("Ошибка!\n");
 		break;
 
 	case 3:
-		if (anagrams.TryShow()) { break; }
+		if (anagrams.TryShow()) { printf("\n"); break; }
 		printf("Ошибка!\n");
 		break;
 
@@ -96,4 +95,3 @@ void ShowMenu()
 	}
 	textFile.close();
 }
-

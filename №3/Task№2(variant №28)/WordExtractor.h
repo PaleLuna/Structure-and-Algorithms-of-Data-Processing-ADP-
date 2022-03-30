@@ -7,7 +7,7 @@ using namespace std;
 class WordExtractor
 {
 	public:
-		void SetUp(char* source);
+		void SetUp(char* original);
 		char** GetWords();
 		unsigned GetSize();
 		bool TryShow();
@@ -15,7 +15,7 @@ class WordExtractor
 		~WordExtractor();
 
 	private:
-		char* text;
+		char* source;
 		unsigned amountWords;
 		char** words;
 
