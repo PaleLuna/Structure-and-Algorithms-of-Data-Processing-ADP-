@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "49d55de7-2136-44b8-90da-d48bbc6b5ce1": {
+      "ProjectGuid": "49d55de7-2136-44b8-90da-d48bbc6b5ce1",
+      "DisplayName": "StaticTable",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

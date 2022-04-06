@@ -142,14 +142,19 @@
     <ClCompile Include="StaticTable.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="StudentTable.cpp" />
+    <ClCompile Include="UserInteraction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="StudentTable.h" />
+    <ClInclude Include="UserInteraction.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="StaticTable.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="MenuText.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
