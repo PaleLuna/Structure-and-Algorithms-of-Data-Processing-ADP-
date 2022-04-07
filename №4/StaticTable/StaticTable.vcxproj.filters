@@ -42,8 +42,11 @@
     <ClCompile Include="Student.cpp">
       <Filter>Исходные файлы\Структуры</Filter>
     </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Исходные файлы\Модули</Filter>
+    </ClCompile>
     <ClCompile Include="UserInteraction.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,11 +56,14 @@
     <ClInclude Include="Student.h">
       <Filter>Файлы заголовков\Структуры</Filter>
     </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Файлы заголовков\Модули</Filter>
+    </ClInclude>
     <ClInclude Include="StudentTable.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
     <ClInclude Include="UserInteraction.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

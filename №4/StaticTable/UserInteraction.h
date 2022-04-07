@@ -1,12 +1,15 @@
-#include <iostream>
 #include "StudentTable.h"
+#include "Input.h"
 #pragma once
 
-using namespace std;
+class UserInteraction
+{
+	public:
+		bool Actions(unsigned choice);
+	private:
+		StudentTable table;
 
-StudentTable table;
-
-bool UserInteracrion(unsigned choice);
-Student& CreatingStudent();
-void StudentInitialization();
-void DeleteStudent();
+		Student& CreatingStudent();
+		void StudentInitialization();
+		void DeleteStudent();
+};

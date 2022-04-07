@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="StaticTable.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="StudentTable.cpp" />
     <ClCompile Include="UserInteraction.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Input.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="StudentTable.h" />

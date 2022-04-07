@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <fstream>
-
-using namespace std;
+#include "UserInteraction.h"
+#include "Input.h"
 
 void PrintMenu();
 
@@ -9,10 +9,15 @@ int main()
 {
 	setlocale(LC_ALL, "ru");
 	PrintMenu();
+	UserInteraction userInteraction;
+	unsigned userChoise;
 
-	table.TryPrint();
-	table.TryDelete(34);
-	table.TryPrint();
+	do
+	{
+		printf("Ваше действие: ");
+		if (!Input(userChoise)) { printf("Некорректный ввод!\n"); continue; }
+	} 
+	while (userInteraction.Actions(userChoise));
 
 	return 0;
 }

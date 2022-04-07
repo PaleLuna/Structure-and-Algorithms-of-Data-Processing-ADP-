@@ -10,7 +10,7 @@ bool StudentTable::TryDelete(unsigned id)
 {
 	unsigned index = FindStudent(id);
 	bool isntEmpty = (size > 0) && (index >= 0);
-	if (isntEmpty) { DeleteStudent(id); }
+	if (isntEmpty) { DeleteStudent(index); }
 	return isntEmpty;
 }
 bool StudentTable::TryPrint()
@@ -40,11 +40,12 @@ void StudentTable::Print()
 		printf("\n");
 	}
 
-	printf("%-9s", "Total");
+	printf("%-8s", "Total");
 	for (int i = 0; i < size; i++)
 	{
 		printf("%4i", studentArray[i].totalPoints());
 	}
+	printf("\n\n");
 }
 
 void StudentTable::InsertingAtTheBeginning(Student newStudent)
@@ -56,8 +57,11 @@ void StudentTable::InsertingAtTheBeginning(Student newStudent)
 }
 void StudentTable::DeleteStudent(unsigned index)
 {
-	for (int i = index; i < size; i++)
-		studentArray[i] = studentArray[i + 1];
+	if((index + 1) != size)
+	{
+		for (int i = index; i < size; i++)
+			studentArray[i] = studentArray[i + 1];
+	}
 	size--;
 }
 short StudentTable::FindStudent(unsigned id)
