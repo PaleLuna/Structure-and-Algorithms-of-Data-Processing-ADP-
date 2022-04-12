@@ -8,9 +8,7 @@ D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№4\StaticTable\St
 D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№4\StaticTable\StudentTable.cpp(62,25): warning C4018: <: несоответствие типов со знаком и без знака
 D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№4\StaticTable\StudentTable.cpp(69,20): warning C4018: <: несоответствие типов со знаком и без знака
   UserInteraction.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№4\StaticTable\UserInteraction.cpp(14,9): error C2065: table: необъявленный идентификатор
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№4\StaticTable\UserInteraction.cpp(20,9): error C2065: table: необъявленный идентификатор
 D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№4\StaticTable\UserInteraction.cpp(39,21): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№4\StaticTable\UserInteraction.cpp(42,9): error C2065: table: необъявленный идентификатор
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№4\StaticTable\UserInteraction.cpp(68,26): error C2065: table: необъявленный идентификатор
   Создание кода...
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№4\StaticTable\UserInteraction.cpp(62): warning C4172: возвращение адреса локальной или временной переменной : newStudent
+  StaticTable.vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№4\x64\Debug\StaticTable.exe
