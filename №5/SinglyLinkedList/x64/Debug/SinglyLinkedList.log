@@ -1,2 +1,5 @@
 ﻿  SinglyLinkedList.cpp
-  SinglyLinkedList.vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\x64\Debug\SinglyLinkedList.exe
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\SinglyLinkedList\SinglyLinkedList.cpp(37,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\SinglyLinkedList\SinglyLinkedList.cpp(24): message : выполняется компиляция ссылки на экземпляр шаблон функции "void Show<int>(List<int> &)"
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\SinglyLinkedList\List.h(160): warning C4172: возвращение адреса локальной или временной переменной : none
+  SinglyLinkedList.vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\x64\Debug\SinglyLinkedList.exe
