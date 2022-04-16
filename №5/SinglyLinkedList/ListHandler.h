@@ -20,6 +20,7 @@ class ListHandler
 
 		void SortingOrigin();
 		void SortingCopy();
+		void DeleteInOriginal(int index);
 
 		int GetHighDigit(int var);
 		int GetLowDigit(int var);

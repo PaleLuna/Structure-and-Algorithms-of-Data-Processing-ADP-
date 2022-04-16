@@ -16,5 +16,6 @@ int main()
 	else
 		printf("Isn't sorted!\n");
 
+	system("pause");
 	return 0;
 }

@@ -43,10 +43,15 @@ void ListHandler::SortingCopy()
 			for (int j = i - step; (j >= 0) && (GetLowDigit(copyList[j]) > GetLowDigit(copyList[j + step])); j -= step)
 			{
 				std::swap(copyList[j], copyList[j + step]);
-				unsigned indexToDelete = originList.Find(copyList[j+step]);
-				if(indexToDelete < originList.GetSize())
-					originList.DeleteAt(indexToDelete);
+				DeleteInOriginal(j);
+				DeleteInOriginal(j + step);
 			}	
+}
+void ListHandler::DeleteInOriginal(int data)
+{
+	unsigned indexToDelete = originList.Find(copyList[data]);
+	if (indexToDelete < originList.GetSize())
+		originList.DeleteAt(indexToDelete);
 }
 
 bool ListHandler::IsSorted()
