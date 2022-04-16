@@ -1,30 +1,70 @@
 #include "ListHandler.h"
 
-void ListHandler::SetLst(const List<int>& newLst)
+void ListHandler::PrintLists()
 {
-	lst = newLst;
+	printf("Origin List: ");
+	for (int i = 0; i < originList.GetSize(); i++)
+		printf("%i ", originList[i]);
+
+	printf("\nCopy List: ");
+	for (int i = 0; i < copyList.GetSize(); i++)
+		printf("%i ", copyList[i]);
+	printf("\n");
 }
-void ListHandler::FillingList()
+
+void ListHandler::CreateList(unsigned size)
 {
+	if (originList.GetSize() > 0)
+		originList.Clear();
+
 	srand(time(NULL));
-	for (int i = 0; i < 20; i++)
-		lst.Push_back(rand() % 99 + 1);
 
-	SortingLst();
+	for (int i = 0; i < size; i++)
+		originList.Push_back((rand() % 99) + 1);
+	SortingOrigin();
 }
-
-void ListHandler::DeleteInLst(unsigned index)
+void ListHandler::SortingOrigin()
 {
-	lst.DeleteAt(index);
+	for (unsigned step = originList.GetSize() / 2; step > 0; step /= 2)
+		for (int i = step; i < originList.GetSize(); i++)
+			for (int j = i - step; (j >= 0) && (GetHighDigit(originList[j]) > GetHighDigit(originList[j + step])); j -= step)
+				std::swap(originList[j], originList[j + step]);	
 }
 
-void ListHandler::CopyInLst2()
+void ListHandler::DeleteNode(unsigned index)
 {
-	lst1 = lst;
+	originList.DeleteAt(index);
 }
 
-void ListHandler::SortingLst()
+void ListHandler::CopyLst()
 {
-
+	copyList = originList;
+	SortingCopy();
+}
+void ListHandler::SortingCopy()
+{
+	for (unsigned step = copyList.GetSize() / 2; step > 0; step /= 2)
+		for (int i = step; i < copyList.GetSize(); i++)
+			for (int j = i - step; (j >= 0) && (GetLowDigit(copyList[j]) > GetLowDigit(copyList[j + step])); j -= step)
+			{
+				std::swap(copyList[j], copyList[j + step]);
+			}	
 }
 
+bool ListHandler::IsSorted()
+{
+	return false;
+}
+
+int ListHandler::GetHighDigit(int var)
+{
+	int highDigit = var / 10;
+	if (highDigit == 0)
+		highDigit = var;
+		
+	return highDigit;
+}
+int ListHandler::GetLowDigit(int var)
+{
+	return var % 10;
+}

@@ -3,27 +3,26 @@
 #include <iostream>
 #pragma once
 
-using namespace std;
 
 class ListHandler
 {
 	public:
-		ListHandler();
-		void SetLst(const List<int>& newLst);
-		void FillingList();
-		void DeleteInLst(unsigned index);
-		void CopyInLst2();
+		void CreateList(unsigned size);
+
+		void PrintLists();
+
+		void DeleteNode(unsigned index);
+		void CopyLst();
 		bool IsSorted();
 
 	private:
-		List<int> lst;
-		List<int> lst1;
+		List<int> originList;
+		List<int> copyList;
 
-		void SortingLst();
-		void SortingLst1();
+		void SortingOrigin();
+		void SortingCopy();
 
-
-
-
+		int GetHighDigit(int var);
+		int GetLowDigit(int var);
 };
 

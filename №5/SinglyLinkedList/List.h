@@ -1,5 +1,4 @@
 #pragma once
-
 using namespace std;
 
 template<typename T>
@@ -16,6 +15,7 @@ class List
 		void Clear();
 
 		T& operator[](unsigned index);
+		void operator=(const List<T>& other);
 
 	private:
 		template<typename>
@@ -102,6 +102,7 @@ void List<T>::Clear()
 {
 	while (size)
 		DeleteHead();
+	size = 0;
 }
 template<typename T>
 void List<T>::DeleteAt(unsigned index)
@@ -158,4 +159,21 @@ T& List<T>::operator[](unsigned index)
 	}
 
 	return none;
+}
+template<typename T>
+void List<T>::operator=(const List<T>& other)
+{
+	this->Clear();
+
+	this->size = other.size;
+	this->head = new Node<T>(other.head->data);
+
+	Node<T>* currentNode = this->head;
+	Node<T>* otherCurrentNode = other.head->pNext;
+	while (otherCurrentNode != nullptr)
+	{
+		currentNode->pNext = new Node<T>(otherCurrentNode->data);
+		currentNode = currentNode->pNext;
+		otherCurrentNode = otherCurrentNode->pNext;
+	}
 }

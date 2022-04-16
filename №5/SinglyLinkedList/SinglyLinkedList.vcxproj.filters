@@ -34,7 +34,7 @@
       <Filter>Исходные файлы\Модули</Filter>
     </ClCompile>
     <ClCompile Include="ListHandler.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -45,7 +45,7 @@
       <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
     <ClInclude Include="ListHandler.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
