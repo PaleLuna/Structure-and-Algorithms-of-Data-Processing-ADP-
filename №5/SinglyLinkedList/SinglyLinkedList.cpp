@@ -11,7 +11,10 @@ int main()
 	lstHandler.CopyLst();
 	lstHandler.PrintLists();
 
-	lstHandler.PrintLists();
+	if (lstHandler.IsSorted())
+		printf("Sorted!\n");
+	else
+		printf("Isn't sorted!\n");
 
 	return 0;
 }

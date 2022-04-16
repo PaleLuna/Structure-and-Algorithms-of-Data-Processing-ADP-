@@ -10,6 +10,7 @@ class List
 		~List();
 
 		unsigned GetSize() { return size; }
+		unsigned Find(T data);
 		void Push_back(T data);
 		void DeleteAt(unsigned index);
 		void Clear();
@@ -66,6 +67,22 @@ template<typename T>
 List<T>::~List()
 {
 	Clear();
+}
+
+template<typename T>
+unsigned List<T>::Find(T data)
+{
+	unsigned index = 0;
+	Node<T>* currentNode = head;
+
+	while (currentNode != nullptr)
+	{
+		if (currentNode->data == data)
+			break;
+		currentNode = currentNode->pNext;
+		index++;
+	}
+	return index;
 }
 
 template<typename T>

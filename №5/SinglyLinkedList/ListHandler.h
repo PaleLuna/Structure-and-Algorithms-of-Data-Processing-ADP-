@@ -11,7 +11,6 @@ class ListHandler
 
 		void PrintLists();
 
-		void DeleteNode(unsigned index);
 		void CopyLst();
 		bool IsSorted();
 
@@ -25,4 +24,3 @@ class ListHandler
 		int GetHighDigit(int var);
 		int GetLowDigit(int var);
 };
-

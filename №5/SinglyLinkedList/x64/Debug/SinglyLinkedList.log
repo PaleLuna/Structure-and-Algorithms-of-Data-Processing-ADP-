@@ -4,6 +4,7 @@ C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-AD
 C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\SinglyLinkedList\ListHandler.cpp(20,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
 C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\SinglyLinkedList\ListHandler.cpp(22,20): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\SinglyLinkedList\ListHandler.cpp(29,24): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\SinglyLinkedList\ListHandler.cpp(47,24): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\SinglyLinkedList\List.h(161): warning C4172: возвращение адреса локальной или временной переменной : none
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\SinglyLinkedList\ListHandler.cpp(42,24): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\SinglyLinkedList\ListHandler.cpp(55,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\SinglyLinkedList\List.h(178): warning C4172: возвращение адреса локальной или временной переменной : none
   SinglyLinkedList.vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№5\x64\Debug\SinglyLinkedList.exe

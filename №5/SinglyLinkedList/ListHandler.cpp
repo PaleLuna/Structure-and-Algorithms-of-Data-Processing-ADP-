@@ -31,11 +31,6 @@ void ListHandler::SortingOrigin()
 				std::swap(originList[j], originList[j + step]);	
 }
 
-void ListHandler::DeleteNode(unsigned index)
-{
-	originList.DeleteAt(index);
-}
-
 void ListHandler::CopyLst()
 {
 	copyList = originList;
@@ -48,12 +43,18 @@ void ListHandler::SortingCopy()
 			for (int j = i - step; (j >= 0) && (GetLowDigit(copyList[j]) > GetLowDigit(copyList[j + step])); j -= step)
 			{
 				std::swap(copyList[j], copyList[j + step]);
+				unsigned indexToDelete = originList.Find(copyList[j+step]);
+				if(indexToDelete < originList.GetSize())
+					originList.DeleteAt(indexToDelete);
 			}	
 }
 
 bool ListHandler::IsSorted()
 {
-	return false;
+	bool isSorted = true;
+	for (int i = 0; (i < (copyList.GetSize()) - 1) && isSorted; i++)
+		isSorted = GetLowDigit(copyList[i]) <= GetLowDigit(copyList[i + 1]);
+	return isSorted;
 }
 
 int ListHandler::GetHighDigit(int var)
