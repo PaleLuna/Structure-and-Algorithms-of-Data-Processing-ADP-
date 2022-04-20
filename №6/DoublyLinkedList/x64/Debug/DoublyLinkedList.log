@@ -1,33 +1,22 @@
 ﻿  DoublyLinkedList.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\DoublyLinkedList.cpp(23,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\DoublyLinkedList.cpp(26,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\DoublyLinkedList.cpp(31,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\DoublyLinkedList.cpp(34,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(200,27): warning C4018: >: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(198): message : во время компиляции функции-члена класс шаблон "void List<int>::SearchFromTail(List<int>::Node<T> *&,unsigned int)"
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\DoublyLinkedList.cpp(19,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\DoublyLinkedList.cpp(28,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(197,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(193): message : во время компиляции функции-члена класс шаблон "void List<Product>::SearchNode(List<Product>::Node<T> *&,unsigned int)"
           with
           [
-              T=int
+              T=Product
           ]
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(215): message : выполняется компиляция ссылки на экземпляр шаблон функции "void List<int>::SearchFromTail(List<int>::Node<T> *&,unsigned int)"
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(214): message : выполняется компиляция ссылки на экземпляр шаблон функции "void List<Product>::SearchNode(List<Product>::Node<T> *&,unsigned int)"
           with
           [
-              T=int
+              T=Product
           ]
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(55): message : во время компиляции функции-члена класс шаблон "List<int>::List(void)"
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\DoublyLinkedList.cpp(9): message : выполняется компиляция ссылки на экземпляр шаблон функции "List<int>::List(void)"
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\DoublyLinkedList.cpp(9): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "List<int>"
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(193,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(191): message : во время компиляции функции-члена класс шаблон "void List<int>::SearchFromHead(List<int>::Node<T> *&,unsigned int)"
-          with
-          [
-              T=int
-          ]
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(211): message : выполняется компиляция ссылки на экземпляр шаблон функции "void List<int>::SearchFromHead(List<int>::Node<T> *&,unsigned int)"
-          with
-          [
-              T=int
-          ]
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(58): message : во время компиляции функции-члена класс шаблон "List<Product>::List(void)"
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\DoublyLinkedList.cpp(9): message : выполняется компиляция ссылки на экземпляр шаблон функции "List<Product>::List(void)"
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\DoublyLinkedList.cpp(9): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "List<Product>"
+D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\List.h(203,28): warning C4018: >: несоответствие типов со знаком и без знака
   List.cpp
+  StoreManager.cpp
   Создание кода...
   DoublyLinkedList.vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\x64\Debug\DoublyLinkedList.exe

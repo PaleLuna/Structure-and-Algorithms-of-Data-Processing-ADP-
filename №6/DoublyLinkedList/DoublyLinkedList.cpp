@@ -6,34 +6,31 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	List<int> lst;
+	List<Product> lst;
 
-	lst.Push_back(2);
-	lst.Push_back(3);
-	lst.Push_back(8);
-	lst.Push_back(1);
-	lst.Push_back(9);
-	lst.Push_back(0);
-	lst.Push_back(21);
+	lst.Push_back(Product(2, 100, Time(2, 4,2022)));
+	lst.Push_back(Product(3, 150, Time(4, 4, 2022)));
+	lst.Push_back(Product(4, 200, Time(6, 4, 2022), Time(7, 4, 2022)));
+	lst.Push_back(Product(5, 250, Time(8, 4, 2022), Time(9, 4, 2022)));
+	lst.Push_back(Product(7, 350, Time(12, 4, 2022)));
+	lst.Push_back(Product(8, 400, Time(14, 4, 2022)));
+	lst.Push_back(Product(9, 450, Time(16, 4, 2022), Time(17, 4, 2022)));
 
-	List<int> lst1;
-	lst1 = lst;
-
-	printf("List1:\n");
 	for (int i = 0; i < lst.GetSize(); i++)
-		printf("%i ", lst[i]);
-	printf("\nList2:\n");
-	for (int i = 0; i < lst1.GetSize(); i++)
-		printf("%i ", lst1[i]);
+	{
+		printf("Product №%03i\n", lst[i].productCode);
+		lst[i].PrintInfo();
+		printf("\n");
+	}
 
-	lst1.Clear();
-	printf("\nList1:\n");
+	lst.Insert(Product(6, 300, Time(10, 4, 2022)), 4);
+	printf("\n-------------------------------------------------------------------\n");
 	for (int i = 0; i < lst.GetSize(); i++)
-		printf("%i ", lst[i]);
-	printf("\nList2:\n");
-	for (int i = 0; i < lst1.GetSize(); i++)
-		printf("%i ", lst1[i]);
-
+	{
+		printf("Product №%03i\n", lst[i].productCode);
+		lst[i].PrintInfo();
+		printf("\n");
+	}
 
 	return 0;
 }

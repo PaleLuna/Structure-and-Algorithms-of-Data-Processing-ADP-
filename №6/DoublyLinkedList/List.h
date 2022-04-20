@@ -1,3 +1,4 @@
+#include "Product.h"
 #pragma once
 
 template<typename T>
@@ -9,8 +10,8 @@ public:
 	~List();
 
 	unsigned GetSize() { return size; }
-	unsigned Find(T data);
 	void Push_back(T data);
+	void Insert(T data, unsigned index);
 	void DeleteAt(unsigned index);
 	void Clear();
 
@@ -26,6 +27,7 @@ private:
 
 		T data;
 
+
 		Node(T data = T(), Node* pNext = nullptr, Node* pPrev = nullptr)
 		{
 			this->pNext = pNext;
@@ -36,14 +38,14 @@ private:
 	};
 
 	void CreateHead(T data);
-	void CreateNewNode(T data);
+	void CreateTail(T data);
+	void CreateNewNode(T data, unsigned index);
 
 	void DeleteHead();
 	void DeleteTail();
 	void DeleteNode(unsigned index);
 
-	void SearchFromTail(List<T>::Node<T>*& node, unsigned index);
-	void SearchFromHead(List<T>::Node<T>*& node, unsigned index);
+	void SearchNode(List<T>::Node<T>*& node, unsigned index);
 
 	unsigned size;
 
@@ -82,21 +84,16 @@ List<T>::~List()
 }
 
 template<typename T>
-unsigned List<T>::Find(T data)
+void List<T>::Insert(T data, unsigned index)
 {
-	unsigned index = 0;
-	Node<T>* currentNode = head;
+	if (index == 0)
+		CreateHead(data);
+	else if (index >= size)
+		CreateTail(data);
+	else
+		CreateNewNode(data, index);
 
-	while (currentNode != nullptr)
-	{
-		if (currentNode->data == data)
-			break;
-		currentNode = currentNode->pNext;
-		index++;
-	}
-	return index;
 }
-
 template<typename T>
 void List<T>::Push_back(T data)
 {
@@ -106,7 +103,7 @@ void List<T>::Push_back(T data)
 	}
 	else
 	{
-		CreateNewNode(data);
+		CreateTail(data);
 	}
 }
 template<typename T>
@@ -117,10 +114,21 @@ void List<T>::CreateHead(T data)
 	size++;
 }
 template<typename T>
-void List<T>::CreateNewNode(T data)
+void List<T>::CreateTail(T data)
 {
 	tail->pNext = new Node<T>(data, nullptr, tail);
 	tail = tail->pNext;
+	size++;
+}
+template<typename T>
+void List<T>::CreateNewNode(T data, unsigned index)
+{
+	Node<T>* currentNode;
+	SearchNode(currentNode, index);
+	
+	currentNode->pPrev->pNext = new Node<T>(data, currentNode, currentNode->pPrev);
+	currentNode->pPrev = currentNode->pPrev->pNext;
+
 	size++;
 }
 
@@ -172,14 +180,7 @@ template<typename T>
 void List<T>::DeleteNode(unsigned index)
 {
 	Node<T>* toDelete; 
-	if (index < size / 2)
-	{
-		SearchFromHead(toDelete, index);
-	}
-	else
-	{
-		SearchFromTail(toDelete, index);
-	}
+	SearchNode(toDelete, index);
 
 	toDelete->pPrev->pNext = toDelete->pNext;
 	toDelete->pNext->pPrev = toDelete->pPrev;
@@ -188,33 +189,29 @@ void List<T>::DeleteNode(unsigned index)
 	size--;
 }
 template<typename T>
-void List<T>::SearchFromHead(List<T>::Node<T>*& node, unsigned index)
+void List<T>::SearchNode(List<T>::Node<T>*& node, unsigned index)
 {
-	node = head;
-	for (int i = 0; i < index && node != nullptr; i++)
-		node = node->pNext;
+	if (index < size / 2)
+	{
+		node = head;
+		for (int i = 0; i < index && node != nullptr; i++)
+			node = node->pNext;
+	}
+	else
+	{
+		node = tail;
+		for (int i = size - 1; i > index; i--)
+			node = node->pPrev;
+	}
 }
-template<typename T>
-void List<T>::SearchFromTail(List<T>::Node<T>*& node, unsigned index)
-{
-	node = tail;
-	for (int i = size - 1; i > index; i--)
-		node = node->pPrev;
-}
+
 
 template<typename T>
 T& List<T>::operator[](unsigned index)
 {
 	Node<T>* searchNode;
 	T none = T();
-	if (index < size / 2)
-	{
-		SearchFromHead(searchNode, index);
-	}
-	else
-	{
-		SearchFromTail(searchNode, index);
-	}
+	SearchNode(searchNode, index);
 
 	return searchNode->data;
 }

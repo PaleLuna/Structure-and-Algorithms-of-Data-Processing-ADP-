@@ -19,18 +19,42 @@
     <Filter Include="Файлы заголовков\Классы">
       <UniqueIdentifier>{54683e60-32ac-46d0-922a-66259a4e9c5f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Структуры">
+      <UniqueIdentifier>{c82d6384-f817-401c-a96d-eead4648ffca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Структуры">
+      <UniqueIdentifier>{c20198b0-c663-40cc-a52b-e80685d9d4d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DoublyLinkedList.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="List.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Классы</Filter>
+    </ClCompile>
+    <ClCompile Include="Product.cpp">
+      <Filter>Исходные файлы\Структуры</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Исходные файлы\Структуры</Filter>
+    </ClCompile>
+    <ClCompile Include="StoreManager.cpp">
+      <Filter>Исходные файлы\Классы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Классы</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Файлы заголовков\Структуры</Filter>
+    </ClInclude>
+    <ClInclude Include="Product.h">
+      <Filter>Файлы заголовков\Структуры</Filter>
+    </ClInclude>
+    <ClInclude Include="StoreManager.h">
+      <Filter>Файлы заголовков\Классы</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
