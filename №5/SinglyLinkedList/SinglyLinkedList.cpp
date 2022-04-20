@@ -1,13 +1,15 @@
-﻿#include "Input.h"
-#include <fstream>
-#include "ListHandler.h"
+﻿#include "ListHandler.h"
 
 int main()
 {
 	setlocale(LC_ALL, "ru");
 	ListHandler lstHandler;
 
-	lstHandler.CreateList(10);
+	unsigned size;
+	printf("Введите количество элементов в списке: ");
+	cin >> size;
+
+	lstHandler.CreateList(size);
 	lstHandler.CopyLst();
 	lstHandler.PrintLists();
 

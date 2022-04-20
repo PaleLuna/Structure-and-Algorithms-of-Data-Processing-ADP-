@@ -139,12 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Input.cpp" />
     <ClCompile Include="ListHandler.cpp" />
     <ClCompile Include="SinglyLinkedList.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Input.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="ListHandler.h" />
   </ItemGroup>

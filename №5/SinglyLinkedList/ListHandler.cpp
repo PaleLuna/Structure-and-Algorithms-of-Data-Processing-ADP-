@@ -58,7 +58,7 @@ bool ListHandler::IsSorted()
 {
 	bool isSorted = true;
 	for (int i = 0; (i < (copyList.GetSize()) - 1) && isSorted; i++)
-		isSorted = GetLowDigit(copyList[i]) <= GetLowDigit(copyList[i + 1]);
+		isSorted = copyList[i] <= copyList[i + 1];
 	return isSorted;
 }
 
