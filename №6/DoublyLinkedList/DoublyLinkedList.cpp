@@ -1,36 +1,114 @@
 ﻿#include <iostream>
-#include "List.h"
-
+#include <fstream>
+#include <conio.h>
+#include "StoreManager.h"
 using namespace std;
+
+StoreManager storeManager;
+bool ISRUN = true;
+
+void PrintMenu();
+void CreateNewList();
+Product& CreateProduct();
+void SetTime(Time& time);
+
+void SelectionProcessing(unsigned selection)
+{
+	Time timeToDelete;
+	switch (selection)
+	{
+		case 0:
+			printf("Выходим...\n");
+			ISRUN = false;
+			break;
+		case 1:
+			CreateNewList();
+			break;
+		case 2:
+			storeManager.AddProduct(CreateProduct());
+			break;
+		case 3:
+			storeManager.RefreshSort();
+			break;
+		case 4:
+			printf("Введите дату: ");
+			SetTime(timeToDelete);
+			storeManager.DeleteAtDate(timeToDelete);
+			break;
+		case 5:
+			storeManager.PrintProducts();
+			break;
+		case 6:
+			system("cls");
+			PrintMenu();
+			break;
+		default:
+			printf("Действие не определено.\n");
+			break;
+		}
+}
 
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	List<Product> lst;
+	PrintMenu();
 
-	lst.Push_back(Product(2, 100, Time(2, 4,2022)));
-	lst.Push_back(Product(3, 150, Time(4, 4, 2022)));
-	lst.Push_back(Product(4, 200, Time(6, 4, 2022), Time(7, 4, 2022)));
-	lst.Push_back(Product(5, 250, Time(8, 4, 2022), Time(9, 4, 2022)));
-	lst.Push_back(Product(7, 350, Time(12, 4, 2022)));
-	lst.Push_back(Product(8, 400, Time(14, 4, 2022)));
-	lst.Push_back(Product(9, 450, Time(16, 4, 2022), Time(17, 4, 2022)));
-
-	for (int i = 0; i < lst.GetSize(); i++)
+	unsigned selection;
+	do
 	{
-		printf("Product №%03i\n", lst[i].productCode);
-		lst[i].PrintInfo();
-		printf("\n");
-	}
-
-	lst.Insert(Product(6, 300, Time(10, 4, 2022)), 4);
-	printf("\n-------------------------------------------------------------------\n");
-	for (int i = 0; i < lst.GetSize(); i++)
-	{
-		printf("Product №%03i\n", lst[i].productCode);
-		lst[i].PrintInfo();
-		printf("\n");
-	}
+		printf("Действие №");
+		cin >> selection;
+		SelectionProcessing(selection);
+	} while (ISRUN);
 
 	return 0;
+}
+
+void PrintMenu()
+{
+	ifstream file("MenuText.txt");
+
+	if (file.is_open())
+	{
+		char text[1024];
+		file.getline(text, 1024, '\0');
+		printf("%s", text);
+	}
+}
+
+void CreateNewList()
+{
+	List<Product> newLst;
+
+	do
+	{
+		newLst.Push_back(CreateProduct());
+	} while (_getch() != 27);
+
+	storeManager.UpdateList(newLst);
+}
+Product& CreateProduct()
+{
+	Product newProduct;
+	printf("Введите код продукта: ");
+	cin >> newProduct.productCode;
+	printf("Введите цену на продукт: ");
+	cin >> newProduct.price;
+	printf("Укажите, был ли возвращен товар: ");
+	cin >> newProduct.returned;
+
+	printf("Введите дату продажи: ");
+	SetTime(newProduct.saleDate);
+	if (newProduct.returned)
+	{
+		printf("Введите дату возврата: ");
+		SetTime(newProduct.returnDate);
+	}
+	cout << endl;
+
+	return newProduct;
+}
+void SetTime(Time& time)
+{
+	scanf_s("%d%*c%d%*c%d", &time.day, &time.month, &time.year);
 }

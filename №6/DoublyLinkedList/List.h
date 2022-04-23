@@ -4,22 +4,7 @@
 template<typename T>
 class List
 {
-public:
-	List();
-	List(const List<T>& other);
-	~List();
-
-	unsigned GetSize() { return size; }
-	void Push_back(T data);
-	void Insert(T data, unsigned index);
-	void DeleteAt(unsigned index);
-	void Clear();
-
-	T& operator[](unsigned index);
-	void operator=(const List<T>& other);
-
-private:
-	template<typename>
+	template<typename T>
 	struct Node
 	{
 		Node* pNext;
@@ -28,7 +13,7 @@ private:
 		T data;
 
 
-		Node(T data = T(), Node* pNext = nullptr, Node* pPrev = nullptr)
+		Node(T& data = T(), Node* pNext = nullptr, Node* pPrev = nullptr)
 		{
 			this->pNext = pNext;
 			this->pPrev = pPrev;
@@ -37,20 +22,41 @@ private:
 		}
 	};
 
-	void CreateHead(T data);
-	void CreateTail(T data);
-	void CreateNewNode(T data, unsigned index);
+	public:
+		List();
+		List(const List<T>& other);
+		~List();
 
-	void DeleteHead();
-	void DeleteTail();
-	void DeleteNode(unsigned index);
+		unsigned GetSize() { return size; }
 
-	void SearchNode(List<T>::Node<T>*& node, unsigned index);
+		void Push_back(T& data);
+		void Push_front(T& data);
+		void Insert(T& data, unsigned index);
+		void MoveToFront(Node<T>* node);
 
-	unsigned size;
+		void DeleteAt(unsigned index);
+		void Clear();
 
-	Node<T>* head;
-	Node<T>* tail;
+		Node<T>* GetNode(unsigned index);
+		T& operator[](unsigned index);
+		void operator=(const List<T>& other);
+
+	private:
+		void CreateHead(T& data);
+		void CreateTail(T& data);
+		void CreateNewHead(T& data);
+		void CreateNewNode(T& data, unsigned index);
+
+		void DeleteHead();
+		void DeleteTail();
+		void DeleteNode(unsigned index);
+
+		void SearchNode(Node<T>*& node, unsigned index);
+
+		unsigned size;
+
+		Node<T>* head;
+		Node<T>* tail;
 };
 
 template<typename T>
@@ -83,11 +89,12 @@ List<T>::~List()
 	Clear();
 }
 
+
 template<typename T>
-void List<T>::Insert(T data, unsigned index)
+void List<T>::Insert(T& data, unsigned index)
 {
 	if (index == 0)
-		CreateHead(data);
+		CreateNewHead(data);
 	else if (index >= size)
 		CreateTail(data);
 	else
@@ -95,33 +102,65 @@ void List<T>::Insert(T data, unsigned index)
 
 }
 template<typename T>
-void List<T>::Push_back(T data)
+void List<T>::MoveToFront(Node<T>* node)
 {
-	if (head == nullptr)
+	if (node->pNext == nullptr)
 	{
-		CreateHead(data);
+		node->pPrev->pNext = nullptr;
+		tail = node->pPrev;
 	}
-	else
+	else if (node->pPrev != nullptr)
 	{
-		CreateTail(data);
+		node->pNext->pPrev = node->pPrev;
+		node->pPrev->pNext = node->pNext;
 	}
+
+	node->pNext = head;
+	head->pPrev = node;
+	node->pPrev = nullptr;
+	head = node;
 }
 template<typename T>
-void List<T>::CreateHead(T data)
+void List<T>::Push_back(T& data)
+{
+	if (head == nullptr)
+		CreateHead(data);
+	else
+		CreateTail(data);
+}
+template<typename T>
+void List<T>::Push_front(T& data)
+{
+	if (head == nullptr)
+		CreateHead(data);
+	else
+		CreateNewHead(data);
+}
+
+template<typename T>
+void List<T>::CreateHead(T& data)
 {
 	head = new Node<T>(data);
 	tail = head;
 	size++;
 }
 template<typename T>
-void List<T>::CreateTail(T data)
+void List<T>::CreateTail(T& data)
 {
 	tail->pNext = new Node<T>(data, nullptr, tail);
 	tail = tail->pNext;
 	size++;
 }
 template<typename T>
-void List<T>::CreateNewNode(T data, unsigned index)
+void List<T>::CreateNewHead(T& data)
+{
+	head->pPrev = new Node<T>(data, head);
+	head = head->pPrev;
+
+	size++;
+}
+template<typename T>
+void List<T>::CreateNewNode(T& data, unsigned index)
 {
 	Node<T>* currentNode;
 	SearchNode(currentNode, index);
@@ -131,6 +170,7 @@ void List<T>::CreateNewNode(T data, unsigned index)
 
 	size++;
 }
+
 
 template<typename T>
 void List<T>::Clear()
@@ -188,8 +228,25 @@ void List<T>::DeleteNode(unsigned index)
 
 	size--;
 }
+
+
 template<typename T>
-void List<T>::SearchNode(List<T>::Node<T>*& node, unsigned index)
+List<T>::Node<T>* List<T>::GetNode(unsigned index)
+{
+	Node<T>* searchNode;
+	SearchNode(searchNode, index);
+	return searchNode;
+}
+template<typename T>
+T& List<T>::operator[](unsigned index)
+{
+	Node<T>* searchNode;
+	SearchNode(searchNode, index);
+
+	return searchNode->data;
+}
+template<typename T>
+void List<T>::SearchNode(Node<T>*& node, unsigned index)
 {
 	if (index < size / 2)
 	{
@@ -206,15 +263,6 @@ void List<T>::SearchNode(List<T>::Node<T>*& node, unsigned index)
 }
 
 
-template<typename T>
-T& List<T>::operator[](unsigned index)
-{
-	Node<T>* searchNode;
-	T none = T();
-	SearchNode(searchNode, index);
-
-	return searchNode->data;
-}
 template<typename T>
 void List<T>::operator=(const List<T>& other)
 {

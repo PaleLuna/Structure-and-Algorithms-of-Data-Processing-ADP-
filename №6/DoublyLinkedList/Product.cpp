@@ -13,8 +13,8 @@ Product::Product(unsigned productCode, unsigned price, Time saleDate, Time retur
 void Product::PrintInfo()
 {
 	printf("ID: %03i\n", productCode);
-	printf("Sale date: %02i.%02i.%i\n", saleDate.day, saleDate.month, saleDate.year);
 	printf("Price: %i Rub\n", price);
+	printf("Sale date: %02i.%02i.%i\n", saleDate.day, saleDate.month, saleDate.year);
 	if (returned)
 		printf("Return date: %02i.%02i.%i\n", returnDate.day, returnDate.month, returnDate.year);
 }
