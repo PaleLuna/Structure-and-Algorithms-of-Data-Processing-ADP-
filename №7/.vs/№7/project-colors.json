@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6670b643-d280-49f6-9e0d-42a3c1c18796": {
+      "ProjectGuid": "6670b643-d280-49f6-9e0d-42a3c1c18796",
+      "DisplayName": "ArrayStack",
+      "ColorIndex": 0
+    },
+    "8ba1ea8b-77d5-432f-ad71-8a14e87b1a37": {
+      "ProjectGuid": "8ba1ea8b-77d5-432f-ad71-8a14e87b1a37",
+      "DisplayName": "ListStack",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
