@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArrayStack", "ArrayStack\Ar
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ListStack", "ListStack\ListStack.vcxproj", "{8BA1EA8B-77D5-432F-AD71-8A14E87B1A37}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TwoStackInArray", "TwoStackInArray\TwoStackInArray.vcxproj", "{0823A0AC-F52A-41B4-ADA8-319AEFF73920}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{8BA1EA8B-77D5-432F-AD71-8A14E87B1A37}.Release|x64.Build.0 = Release|x64
 		{8BA1EA8B-77D5-432F-AD71-8A14E87B1A37}.Release|x86.ActiveCfg = Release|Win32
 		{8BA1EA8B-77D5-432F-AD71-8A14E87B1A37}.Release|x86.Build.0 = Release|Win32
+		{0823A0AC-F52A-41B4-ADA8-319AEFF73920}.Debug|x64.ActiveCfg = Debug|x64
+		{0823A0AC-F52A-41B4-ADA8-319AEFF73920}.Debug|x64.Build.0 = Debug|x64
+		{0823A0AC-F52A-41B4-ADA8-319AEFF73920}.Debug|x86.ActiveCfg = Debug|Win32
+		{0823A0AC-F52A-41B4-ADA8-319AEFF73920}.Debug|x86.Build.0 = Debug|Win32
+		{0823A0AC-F52A-41B4-ADA8-319AEFF73920}.Release|x64.ActiveCfg = Release|x64
+		{0823A0AC-F52A-41B4-ADA8-319AEFF73920}.Release|x64.Build.0 = Release|x64
+		{0823A0AC-F52A-41B4-ADA8-319AEFF73920}.Release|x86.ActiveCfg = Release|Win32
+		{0823A0AC-F52A-41B4-ADA8-319AEFF73920}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,12 @@
       "ProjectGuid": "8ba1ea8b-77d5-432f-ad71-8a14e87b1a37",
       "DisplayName": "ListStack",
       "ColorIndex": 1
+    },
+    "0823a0ac-f52a-41b4-ada8-319aeff73920": {
+      "ProjectGuid": "0823a0ac-f52a-41b4-ada8-319aeff73920",
+      "DisplayName": "TwoStackInArray",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }
