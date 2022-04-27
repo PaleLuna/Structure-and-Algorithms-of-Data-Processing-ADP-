@@ -21,7 +21,7 @@ class ListStack
 		~ListStack();
 
 		void Push(const T& data);
-		bool Pop(T& var);
+		T Pop();
 		bool GetHead(T& var);
 
 		bool IsEmpty();
@@ -50,16 +50,17 @@ void ListStack<T>::Push(const T& data)
 	this->head = new Node<T>(data, head);
 }
 template<typename T>
-inline bool ListStack<T>::Pop(T& var)
+T ListStack<T>::Pop()
 {
-	bool flag = !IsEmpty();
-	if (flag)
+	T var = T();
+
+	if (!IsEmpty())
 	{
 		var = head->data;
 		DeleteHead();
 	}
 
-	return flag;
+	return var;
 }
 template<typename T>
 inline bool ListStack<T>::DeleteHead()
