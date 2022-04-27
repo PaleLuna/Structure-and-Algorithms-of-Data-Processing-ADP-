@@ -1,3 +1,1 @@
-﻿  DoublyLinkedList.cpp
-D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\DoublyLinkedList\DoublyLinkedList.cpp(109): warning C4172: возвращение адреса локальной или временной переменной : newProduct
-  DoublyLinkedList.vcxproj -> D:\5.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\x64\Debug\DoublyLinkedList.exe
+﻿  DoublyLinkedList.vcxproj -> C:\Users\rober\Documents\4.GitHub\Structure-and-Algorithms-of-Data-Processing-ADP-\№6\x64\Debug\DoublyLinkedList.exe
