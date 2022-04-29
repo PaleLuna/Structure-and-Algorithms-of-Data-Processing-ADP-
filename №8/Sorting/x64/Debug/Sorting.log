@@ -1,0 +1,5 @@
+﻿  Sorting.cpp
+C:\Users\rober\Desktop\Sorting\Sorting\Sorting.cpp(49,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\rober\Desktop\Sorting\Sorting\Sorting.cpp(57,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\rober\Desktop\Sorting\Sorting\Sorting.cpp(58,20): warning C4018: <: несоответствие типов со знаком и без знака
+  Sorting.vcxproj -> C:\Users\rober\Desktop\Sorting\x64\Debug\Sorting.exe
